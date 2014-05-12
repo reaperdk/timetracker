@@ -1,0 +1,4 @@
+/ProjectTimetracker/*.suo
+*.obj
+test.c
+*/bin/*

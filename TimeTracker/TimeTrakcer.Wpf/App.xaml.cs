@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
+using TimeTrakcer.Wpf.ViewModel;
+using TimeTrakcer.Wpf.View;
 
 namespace TimeTrakcer.Wpf
 {
@@ -13,5 +9,14 @@ namespace TimeTrakcer.Wpf
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            var viewModel = new ViewModel.ViewModel();
+            var view = new MainWindow();
+            view.DataContext = viewModel;
+            view.Show();
+        }
     }
 }
