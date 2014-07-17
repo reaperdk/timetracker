@@ -11,8 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BE54BBFA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTests", "WebTests\WebTests.csproj", "{CB5FF6BB-2545-492D-A8A3-2C578E8A2228}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTests", "WpfTests\WpfTests.csproj", "{AFEE626B-E14A-400A-8F48-C19052EAB773}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfTests", "WcfTests\WcfTests.csproj", "{46B5A7AC-1ED5-4B9B-9370-8EB604EFAE09}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.Model", "TimeTracker.Model\TimeTracker.Model.csproj", "{C6FFD3CD-2400-415B-9551-D2587F4954EE}"
@@ -22,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.Wrapper", "TimeTracker.Wrapper\TimeTracker.Wrapper.csproj", "{413FE920-CDB0-4B3C-BD23-DFD1902DC5C6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.ClassService", "TimeTracker.ClassService\TimeTracker.ClassService.csproj", "{ECC8EE94-72BF-4BD4-830C-9504D41B36C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.WebApi", "TimeTracker.WebApi\TimeTracker.WebApi.csproj", "{1D2D59C7-0E3F-4CC2-AB33-D7BCC76BA4A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,6 @@ Global
 		{CB5FF6BB-2545-492D-A8A3-2C578E8A2228}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB5FF6BB-2545-492D-A8A3-2C578E8A2228}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB5FF6BB-2545-492D-A8A3-2C578E8A2228}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AFEE626B-E14A-400A-8F48-C19052EAB773}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AFEE626B-E14A-400A-8F48-C19052EAB773}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AFEE626B-E14A-400A-8F48-C19052EAB773}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AFEE626B-E14A-400A-8F48-C19052EAB773}.Release|Any CPU.Build.0 = Release|Any CPU
 		{46B5A7AC-1ED5-4B9B-9370-8EB604EFAE09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{46B5A7AC-1ED5-4B9B-9370-8EB604EFAE09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46B5A7AC-1ED5-4B9B-9370-8EB604EFAE09}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -65,13 +61,16 @@ Global
 		{ECC8EE94-72BF-4BD4-830C-9504D41B36C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECC8EE94-72BF-4BD4-830C-9504D41B36C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECC8EE94-72BF-4BD4-830C-9504D41B36C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D2D59C7-0E3F-4CC2-AB33-D7BCC76BA4A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D2D59C7-0E3F-4CC2-AB33-D7BCC76BA4A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D2D59C7-0E3F-4CC2-AB33-D7BCC76BA4A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D2D59C7-0E3F-4CC2-AB33-D7BCC76BA4A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CB5FF6BB-2545-492D-A8A3-2C578E8A2228} = {BE54BBFA-6727-4FC2-A953-67C843FB5B0D}
-		{AFEE626B-E14A-400A-8F48-C19052EAB773} = {BE54BBFA-6727-4FC2-A953-67C843FB5B0D}
 		{46B5A7AC-1ED5-4B9B-9370-8EB604EFAE09} = {BE54BBFA-6727-4FC2-A953-67C843FB5B0D}
 	EndGlobalSection
 EndGlobal
