@@ -5,8 +5,9 @@ using System.Text;
 
 namespace TimeTracker.Model
 {
-    public class ProjectModel
+    public class ProjectModel : IModelBase
     {
+        public string Name { get; set; }
         public IEnumerable<UserModel> Users { get; set; }
     }
 }
