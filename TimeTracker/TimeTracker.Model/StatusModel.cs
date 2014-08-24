@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace TimeTracker.Model
 {
-    class StatusModel : IModelBase
+    public class StatusModel : IModelBase
     {
         public int Id { get; set; }
+
         public string Name { get; set; }
+
+        public virtual ICollection<TaskModel> Tasks { get; set; }
     }
 }

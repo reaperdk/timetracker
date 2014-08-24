@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TimeTracker.Model
 {
-    public class webpages_Roles
+    public class webpages_Roles : IModelBase
     {
         public webpages_Roles()
         {
@@ -17,5 +17,17 @@ namespace TimeTracker.Model
         public string RoleName { get; set; }
     
         public virtual ICollection<UserProfile> UserProfiles { get; set; }
+
+        public int Id
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }

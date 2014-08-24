@@ -34,10 +34,10 @@ namespace TimeTracker.Repository
             return _context.Set<T>().Where(predicate);
         }
 
-        public async Task<T> GetAsync(int id)
-        {
-            return await _context.Set<T>().FindAsync(id);
-        }
+        //public async Task<T> GetAsync(int id)
+        //{
+        //    return await _context.Set<T>().FindAsync(id);
+        //}
 
         public void Insert(T entity)
         {
@@ -60,10 +60,10 @@ namespace TimeTracker.Repository
             _context.SaveChanges();
         }
 
-        public async Task SaveAsync()
-        {
-            await _context.SaveChangesAsync();
-        }
+        //public async Task SaveAsync()
+        //{
+        //    await _context.SaveChangesAsync();
+        //}
 
         protected virtual void Dispose(bool disposing)
         {

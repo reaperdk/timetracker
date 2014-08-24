@@ -10,11 +10,11 @@ namespace TimeTracker.Repository
         T Get(int id);
         IQueryable<T> Get();
         IQueryable<T> Get(Expression<Func<T, bool>> predicate);
-        Task<T> GetAsync(int id);
+        //Task<T> GetAsync(int id);
         void Insert(T entity);
         void Update(T entity);
         void Remove(int id);
         void Save();
-        Task SaveAsync();
+        //Task SaveAsync();
     }
 }

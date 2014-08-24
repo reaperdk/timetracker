@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace TimeTracker.Model
 {
-    public class webpages_Membership
+    public class webpages_Membership : IModelBase
     {
         public int UserId { get; set; }
         public Nullable<System.DateTime> CreateDate { get; set; }
@@ -18,5 +18,17 @@ namespace TimeTracker.Model
         public Nullable<System.DateTime> PasswordVerificationTokenExpirationDate { get; set; }
 
         public virtual UserProfile UserProfile { get; set; }
+
+        public int Id
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }
