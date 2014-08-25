@@ -17,7 +17,7 @@ namespace TimeTracker.Repository
 
         //public virtual IDbSet<UserProfile> UserProfiles { get; set; }
         //public virtual IDbSet<webpages_Membership> webpages_Membership { get; set; }
-        //public virtual IDbSet<webpages_OAuthMembership> webpages_OAuthMembership { get; set; }
+        ////public virtual IDbSet<webpages_OAuthMembership> webpages_OAuthMembership { get; set; }
         //public virtual IDbSet<webpages_Roles> webpages_Roles { get; set; }
 
         public virtual IDbSet<UserModel> Users { get; set; }
@@ -41,6 +41,9 @@ namespace TimeTracker.Repository
                 .WithMany(t => t.AssigningTasks)
                 .HasForeignKey(m => m.AssigningPersonId)
                 .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<UserProfile>()
+            //    .HasRequired(u => u.webpages_Membership)
+            //    .WithRequiredDependent(x => x.UserProfile);
         }
     }
 }

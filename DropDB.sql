@@ -20,3 +20,13 @@ IF OBJECT_ID('TypeModels', 'U') IS NOT NULL
   DROP TABLE TypeModels;
 IF OBJECT_ID('CategoryModels', 'U') IS NOT NULL
   DROP TABLE CategoryModels;
+IF OBJECT_ID('webpages_UsersInRoles', 'U') IS NOT NULL
+  DROP TABLE webpages_UsersInRoles;
+IF OBJECT_ID('UserProfile', 'U') IS NOT NULL
+  DROP TABLE UserProfile;
+IF OBJECT_ID('webpages_Membership', 'U') IS NOT NULL
+  DROP TABLE webpages_Membership;
+IF OBJECT_ID('webpages_OAuthMembership', 'U') IS NOT NULL
+  DROP TABLE webpages_OAuthMembership;
+IF OBJECT_ID('webpages_Roles', 'U') IS NOT NULL
+  DROP TABLE webpages_Roles;
