@@ -28,5 +28,19 @@ namespace TimeTracker.Repository
         public virtual IDbSet<StatusModel> Statuses { get; set; }
         public virtual IDbSet<PriorityModel> Priorities { get; set; }
         public virtual IDbSet<TypeModel> Types { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<TaskModel>()
+                .HasRequired(t => t.AssignedPerson)
+                .WithMany(t => t.AssignedTasks)
+                .HasForeignKey(m => m.AssignedPersonId)
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<TaskModel>()
+                .HasRequired(t => t.AssigningPerson)
+                .WithMany(t => t.AssigningTasks)
+                .HasForeignKey(m => m.AssigningPersonId)
+                .WillCascadeOnDelete(false);
+        }
     }
 }
