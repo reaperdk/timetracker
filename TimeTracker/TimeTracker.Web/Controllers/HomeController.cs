@@ -15,12 +15,6 @@ namespace TimeTracker.Web.Controllers
         public HomeController()
         {
             _logger = LogManager.GetLogger(this.GetType());
-            var r = new Repository.EntitiesRepository<TimeTracker.Model.UserModel>();
-            r.Insert(new TimeTracker.Model.UserModel { Login = "twojastara123456789" });
-            r.Save();
-            var x = r.Get().ToList();
-            var r2 = new Repository.EntitiesRepository<UserModel>();
-            System.Diagnostics.Debugger.Break();
         }
 
         public ActionResult Index()
