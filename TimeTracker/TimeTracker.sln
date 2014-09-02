@@ -36,6 +36,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{5728CDBB-D
 		..\docs\IMAG0342.jpg = ..\docs\IMAG0342.jpg
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassServiceTests", "ClassServiceTests\ClassServiceTests.csproj", "{8AA231B0-559A-4ED9-9D96-12B6C4844273}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,6 +80,10 @@ Global
 		{A139D99E-95F4-4813-9902-0E9066AF52D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A139D99E-95F4-4813-9902-0E9066AF52D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A139D99E-95F4-4813-9902-0E9066AF52D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AA231B0-559A-4ED9-9D96-12B6C4844273}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AA231B0-559A-4ED9-9D96-12B6C4844273}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AA231B0-559A-4ED9-9D96-12B6C4844273}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AA231B0-559A-4ED9-9D96-12B6C4844273}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +91,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{CB5FF6BB-2545-492D-A8A3-2C578E8A2228} = {BE54BBFA-6727-4FC2-A953-67C843FB5B0D}
 		{46B5A7AC-1ED5-4B9B-9370-8EB604EFAE09} = {BE54BBFA-6727-4FC2-A953-67C843FB5B0D}
+		{8AA231B0-559A-4ED9-9D96-12B6C4844273} = {BE54BBFA-6727-4FC2-A953-67C843FB5B0D}
 		{5728CDBB-DE36-453E-A7AC-2C04143EF105} = {BBEAA0FB-72C7-41EC-A273-3F3292CFD9C8}
 	EndGlobalSection
 EndGlobal
