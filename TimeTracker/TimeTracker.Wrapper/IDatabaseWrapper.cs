@@ -7,64 +7,61 @@ using TimeTracker.Model;
 
 namespace TimeTracker.Wrapper
 {
-    public interface IDatabaseWrapper<T> where T : class, IModelBase
+    /// <summary>
+    /// There will be methods used in Web project like "CreateProject" etc. This interface gives possibility to make selected CRUD actions
+    /// </summary>
+    public interface IDatabaseWrapper
     {
         /// <summary>
-        /// Gets T-type entity by its id from database
+        /// Create a new project in database.
         /// </summary>
-        /// <param name="id">Id of T model</param>
-        /// <returns>T model if found, otherwise null</returns>
-        /// <exception cref="ArgumenException">Thrown when id is less or equal zero</exception>
-        T Get(int id);
-        TResult Get<TResult>(int id) where TResult : class, IModelBase;
+        /// <param name="projectName">Project name</param>
+        /// <returns>True if project is succesfully created, otherwise false</returns>
+        /// <exception cref="ArgumentException">Thrown when project name is null or empty</exception>
+        bool CreateProject(string projectName);
 
         /// <summary>
-        /// Gets list of entities of T-type from database
+        /// Creates task and add to the project.
         /// </summary>
-        /// <returns>List of T-type entities if found, otherwise empty list</returns>
-        IEnumerable<T> Get();
-        IEnumerable<TResult> Get<TResult>() where TResult : class, IModelBase;
-
-        ///// <summary>
-        ///// Gets list of entities of T-type from database via WebApi with a specified http request
-        ///// </summary>
-        ///// <param name="httpRequest">Specified http request</param>
-        ///// <returns>List of T-type entities if found, otherwise empty list</returns>
-        ///// <exception cref="ArgumentException">Thrown when httpRequest is null or empty</exception>
-        //IEnumerable<T> Get(string httpRequest);
-        //IEnumerable<TResult> Get<TResult>(string httpRequest) where TResult : class, IModelBase;
+        /// <param name="projectId">Project id</param>
+        /// <param name="task">Task which has to be added to the project. Must have at least name</param>
+        /// <returns>True if task is succesfully added to project, otherwise false</returns>
+        /// <exception cref="ArgumentException">Thrown when projectId is equal or less than zero or task name is null or empty</exception>
+        bool AddTaskToProject(int projectId, TaskModel task);
 
         /// <summary>
-        /// Adds new entity to database
+        /// Creates project's category
         /// </summary>
-        /// <param name="entity">Entity to add to database</param>
-        /// <returns>Returns entity with id if success, otherwise null</returns>
-        /// <exception cref="ArgumentException">Thrown when entity is null</exception>
-        T Add(T entity);
-
-        ///// <summary>
-        ///// Adds new entity to database via WebApi with a specified http request 
-        ///// </summary>
-        ///// <param name="httpRequest">Specified http request</param>
-        ///// <param name="data">Entity to add to database</param>
-        ///// <exception cref="ArgumentNullException">Thrown when data is null</exception>
-        ///// <exception cref="ArgumentException">Thrown when httpRequest is null or empty</exception>
-        //void Add(string httpRequest, object data);
+        /// <param name="categoryName">Category name</param>
+        /// <returns>True if category is created, otherwise false/returns>
+        /// <exception cref="ArgumentException">Thrown when category name is null or empty</exception>
+        bool CreateCategory(string categoryName);
 
         /// <summary>
-        /// Updates entity in database
+        /// Creates status
         /// </summary>
-        /// <param name="entity">Entity to update</param>
-        /// <returns>T-type entity if updated, otherwise null</returns>
-        /// <exception cref="ArgumentNullException">Thrown when entity is null</exception>
-        T Update(T entity);
+        /// <param name="statusName">Status name</param>
+        /// <returns>True if status is created, otherwise false/returns>
+        /// <exception cref="ArgumentException">Thrown when status name is null or empty</exception>
+        bool CreateStatus(string statusName);
 
         /// <summary>
-        /// Deletes T-type entity by its id from database
+        /// Creates type
         /// </summary>
-        /// <param name="id">Id of entity</param>
-        /// <exception cref="ArgumentException">Thrown when id is less or equal zero</exception>
-        void Delete(int id);
+        /// <param name="typeName">Type name</param>
+        /// <returns>True if type is created, otherwise false/returns>
+        /// <exception cref="ArgumentException">Thrown when type name is null or empty</exception>
+        bool CreateType(string typeName);
+
+        /// <summary>
+        /// Creates user
+        /// </summary>
+        /// <param name="userLogin">User login</param>
+        /// <returns>True if user is created, false if user exist/returns>
+        /// <exception cref="ArgumentException">Thrown when user login is null or empty</exception>
+        bool CreateUser(string userLogin);
+
+
     }
 }
     
