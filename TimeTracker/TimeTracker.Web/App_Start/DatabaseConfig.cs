@@ -8,14 +8,14 @@ namespace TimeTracker.Web
 {
     public class DatabaseConfig
     {
-        private readonly IWrapper _wrapper;
+        private readonly IServiceWrapper _wrapper;
 
         public DatabaseConfig()
         {
             _wrapper = new ClassWrapper();
         }
 
-        public DatabaseConfig(IWrapper wrapper)
+        public DatabaseConfig(IServiceWrapper wrapper)
         {
             _wrapper = wrapper;
         }

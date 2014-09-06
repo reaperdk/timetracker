@@ -8,7 +8,7 @@ using TimeTracker.Model;
 
 namespace TimeTracker.Wrapper
 {
-    public class ClassWrapper : IWrapper
+    public class ClassWrapper : IServiceWrapper
     {
         private readonly IUsersService _usersService;
         private readonly IRolesService _rolesService;

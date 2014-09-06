@@ -10,13 +10,13 @@ namespace TimeTracker.Web.Controllers
 {
     public class UsersController : Controller
     {
-        private readonly IWrapper _wrapper;
+        private readonly IServiceWrapper _wrapper;
 
         public UsersController()
         {
             _wrapper = new ClassWrapper();
         }
-        public UsersController(IWrapper usersWrapper)
+        public UsersController(IServiceWrapper usersWrapper)
         {
             _wrapper = usersWrapper;
         }

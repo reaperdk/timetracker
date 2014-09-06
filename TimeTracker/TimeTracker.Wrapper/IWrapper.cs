@@ -7,7 +7,7 @@ using TimeTracker.Model;
 
 namespace TimeTracker.Wrapper
 {
-    public interface IWrapper
+    public interface IServiceWrapper
     {
         IEnumerable<UserProfile> GetAllUsers();
         UserProfile GetUserById(int id);
