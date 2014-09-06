@@ -80,6 +80,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TimeTracker.ClassService\TimeTracker.ClassService.csproj">
+      <Project>{ecc8ee94-72bf-4bd4-830c-9504d41b36c6}</Project>
+      <Name>TimeTracker.ClassService</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TimeTracker.Model\TimeTracker.Model.csproj">
       <Project>{a139d99e-95f4-4813-9902-0e9066af52d6}</Project>
       <Name>TimeTracker.Model</Name>
