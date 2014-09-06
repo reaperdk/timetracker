@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassWrapper.cs" />
-    <Compile Include="IWrapper.cs" />
+    <Compile Include="IServiceWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
