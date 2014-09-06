@@ -26,7 +26,11 @@ namespace TimeTracker.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+
             MapperConfig.RegisterMapper();
+
+            var dbConfig = new DatabaseConfig();
+            dbConfig.AddRoles();
         }
     }
 }

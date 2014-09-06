@@ -39,9 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassWrappers\UsersClassWrapper.cs" />
-    <Compile Include="IDatabaseWrapper.cs" />
-    <Compile Include="IUsersWrapper.cs" />
+    <Compile Include="ClassWrapper.cs" />
+    <Compile Include="IWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -54,10 +53,7 @@
       <Name>TimeTracker.Model</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="WcfWrappers\" />
-    <Folder Include="WebApiWrappers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

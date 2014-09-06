@@ -5,27 +5,26 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TimeTracker.Wrapper;
-using TimeTracker.Wrapper.ClassWrappers;
 
 namespace TimeTracker.Web.Controllers
 {
     public class UsersController : Controller
     {
-        private readonly IUsersWrapper _usersWrapper;
+        private readonly IWrapper _wrapper;
 
         public UsersController()
         {
-            _usersWrapper = new UsersClassWrapper();
+            _wrapper = new ClassWrapper();
         }
-        public UsersController(IUsersWrapper usersWrapper)
+        public UsersController(IWrapper usersWrapper)
         {
-            _usersWrapper = usersWrapper;
+            _wrapper = usersWrapper;
         }
 
         public ActionResult Index()
         {
             return View(
-                _usersWrapper.GetAllUsers().Select(
+                _wrapper.GetAllUsers().Select(
                     item => Mapper.Map<Web.Models.UserModel>(item)
                 )
             );
@@ -34,36 +33,41 @@ namespace TimeTracker.Web.Controllers
         public ActionResult Details(int id)
         {
             return View(
-                Mapper.Map<Web.Models.UserModel>(_usersWrapper.GetById(id))
+                Mapper.Map<Web.Models.UserModel>(_wrapper.GetUserById(id))
             );
         }
 
         public ActionResult Create()
         {
-            return View();
+            return View(
+                new Web.Models.UserModel
+                {
+                    Roles = new SelectList(_wrapper.GetAllRoles(), "RoleId", "RoleName")
+                }
+            );
         }
 
         [HttpPost]
         public ActionResult Create(Web.Models.UserModel model)
         {
-            _usersWrapper.Add(
-                Mapper.Map<Model.UserModel>(model)
-            );
+            Model.UserProfile user = Mapper.Map<Model.UserProfile>(model);
+            user.webpages_Roles.Add(_wrapper.GetRoleById(model.RoleId));
+            _wrapper.CreateUser(Mapper.Map<Model.UserProfile>(model));
             return RedirectToAction("Index");
         }
 
         public ActionResult Edit(int id)
         {
             return View(
-                Mapper.Map<Web.Models.UserModel>(_usersWrapper.GetById(id))
+                Mapper.Map<Web.Models.UserModel>(_wrapper.GetUserById(id))
             );
         }
 
         [HttpPost]
-        public ActionResult Edit(int id, Model.UserModel model)
+        public ActionResult Edit(int id, Model.UserProfile model)
         {
-            _usersWrapper.Update(
-                Mapper.Map<Model.UserModel>(model)
+            _wrapper.UpdateUser(
+                Mapper.Map<Model.UserProfile>(model)
             );
             return RedirectToAction("Index");
         }
@@ -71,14 +75,14 @@ namespace TimeTracker.Web.Controllers
         public ActionResult Delete(int id)
         {
             return View(
-                Mapper.Map<Web.Models.UserModel>(_usersWrapper.GetById(id))
+                Mapper.Map<Web.Models.UserModel>(_wrapper.GetUserById(id))
             );
         }
 
         [HttpPost]
         public ActionResult Delete(Web.Models.UserModel user)
         {
-            _usersWrapper.Remove(user.Id);
+            _wrapper.RemoveUser(user.Id);
             return RedirectToAction("Index");
         }
     }

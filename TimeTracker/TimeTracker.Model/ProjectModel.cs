@@ -13,7 +13,7 @@ namespace TimeTracker.Model
 
         public string Name { get; set; }
 
-        public virtual ICollection<UserModel> Users { get; set; }
+        public virtual ICollection<UserProfile> Users { get; set; }
         public virtual ICollection<TaskModel> Tasks { get; set; }
     }
 }

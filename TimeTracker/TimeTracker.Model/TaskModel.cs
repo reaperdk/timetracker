@@ -25,8 +25,8 @@ namespace TimeTracker.Model
         public int TypeId { get; set; }
 
         public virtual ProjectModel Project { get; set; }
-        public virtual UserModel AssignedPerson { get; set; }
-        public virtual UserModel AssigningPerson { get; set; }
+        public virtual UserProfile AssignedPerson { get; set; }
+        public virtual UserProfile AssigningPerson { get; set; }
         public virtual CategoryModel Category { get; set; }
         public virtual StatusModel Status { get; set; }
         public virtual PriorityModel Priority { get; set; }

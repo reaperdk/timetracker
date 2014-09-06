@@ -15,12 +15,11 @@ namespace TimeTracker.Repository
         {
         }
 
-        //public virtual IDbSet<UserProfile> UserProfiles { get; set; }
+        public virtual IDbSet<UserProfile> UserProfiles { get; set; }
         //public virtual IDbSet<webpages_Membership> webpages_Membership { get; set; }
-        ////public virtual IDbSet<webpages_OAuthMembership> webpages_OAuthMembership { get; set; }
-        //public virtual IDbSet<webpages_Roles> webpages_Roles { get; set; }
+        //public virtual IDbSet<webpages_OAuthMembership> webpages_OAuthMembership { get; set; }
+        public virtual IDbSet<webpages_Roles> webpages_Roles { get; set; }
 
-        public virtual IDbSet<UserModel> Users { get; set; }
         public virtual IDbSet<ProjectModel> Projects { get; set; }
         public virtual IDbSet<TaskModel> Tasks { get; set; }
         public virtual IDbSet<SlotModel> Slots { get; set; }

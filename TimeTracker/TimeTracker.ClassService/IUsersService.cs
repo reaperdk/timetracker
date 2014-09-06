@@ -9,10 +9,10 @@ namespace TimeTracker.ClassService
 {
     public interface IUsersService
     {
-        IEnumerable<UserModel> GetAllUsers();
-        UserModel GetById(int id);
-        void Add(UserModel user);
-        void Update(UserModel user);
+        IEnumerable<UserProfile> GetAll();
+        UserProfile GetById(int id);
+        void Add(UserProfile user);
+        void Update(UserProfile user);
         void Remove(int id);
     }
 }

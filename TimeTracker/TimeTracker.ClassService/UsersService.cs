@@ -10,19 +10,19 @@ namespace TimeTracker.ClassService
 {
     public class UsersService : IUsersService
     {
-        private IEntitiesRepository<UserModel> _repository;
-        private readonly Func<IEntitiesRepository<UserModel>> _getRepository;
+        private IEntitiesRepository<UserProfile> _repository;
+        private readonly Func<IEntitiesRepository<UserProfile>> _getRepository;
 
         public UsersService()
         {
-            _getRepository = () => new EntitiesRepository<UserModel>();
+            _getRepository = () => new EntitiesRepository<UserProfile>();
         }
-        public UsersService(Func<IEntitiesRepository<UserModel>> getRepository)
+        public UsersService(Func<IEntitiesRepository<UserProfile>> getRepository)
         {
             _getRepository = getRepository;
         }
 
-        public IEnumerable<UserModel> GetAllUsers()
+        public IEnumerable<UserProfile> GetAll()
         {
             using (_repository = _getRepository())
             {
@@ -30,7 +30,7 @@ namespace TimeTracker.ClassService
             }
         }
 
-        public UserModel GetById(int id)
+        public UserProfile GetById(int id)
         {
             using (_repository = _getRepository())
             {
@@ -38,7 +38,7 @@ namespace TimeTracker.ClassService
             }
         }
 
-        public void Add(UserModel user)
+        public void Add(UserProfile user)
         {
             using (_repository = _getRepository())
             {
@@ -47,7 +47,7 @@ namespace TimeTracker.ClassService
             }
         }
 
-        public void Update(UserModel user)
+        public void Update(UserProfile user)
         {
             using (_repository = _getRepository())
             {
