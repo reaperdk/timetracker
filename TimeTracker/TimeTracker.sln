@@ -40,6 +40,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassServiceTests", "ClassS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.Common", "TimeTracker.Common\TimeTracker.Common.csproj", "{1FA955EF-D772-40FF-B3F1-C233251290DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.WcfContract", "TimeTracker.WcfContract\TimeTracker.WcfContract.csproj", "{CAEDE7D1-4F13-4EED-9F6A-4161C5D383E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -90,6 +92,10 @@ Global
 		{1FA955EF-D772-40FF-B3F1-C233251290DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FA955EF-D772-40FF-B3F1-C233251290DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FA955EF-D772-40FF-B3F1-C233251290DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAEDE7D1-4F13-4EED-9F6A-4161C5D383E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAEDE7D1-4F13-4EED-9F6A-4161C5D383E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAEDE7D1-4F13-4EED-9F6A-4161C5D383E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAEDE7D1-4F13-4EED-9F6A-4161C5D383E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
