@@ -7,7 +7,7 @@ using TimeTracker.Wrapper.WcfWrapperConnection;
 
 namespace TimeTracker.Wrapper
 {
-    public class WcfWrapper : IServiceWrapper
+    public class WcfWrapper //: IServiceWrapper
     {
         private readonly IWcfConnectionService _connectionService;
 

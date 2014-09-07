@@ -12,11 +12,13 @@ namespace TimeTracker.Wrapper
     {
         private readonly IUsersService _usersService;
         private readonly IRolesService _rolesService;
+        private readonly IUsersRolesService _usersRolesService;
 
         public ClassWrapper()
         {
             _usersService = new ClassService.UsersService();
             _rolesService = new ClassService.RolesService();
+            _usersRolesService = new ClassService.UsersRolesService();
         }
         public ClassWrapper(IUsersService usersService, IRolesService rolesService)
         {

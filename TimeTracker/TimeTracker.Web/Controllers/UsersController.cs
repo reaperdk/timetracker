@@ -50,10 +50,16 @@ namespace TimeTracker.Web.Controllers
         [HttpPost]
         public ActionResult Create(Web.Models.UserModel model)
         {
-            Model.UserProfile user = Mapper.Map<Model.UserProfile>(model);
-            user.webpages_Roles.Add(_wrapper.GetRoleById(model.RoleId));
-            _wrapper.CreateUser(Mapper.Map<Model.UserProfile>(model));
-            return RedirectToAction("Index");
+            using (var c = new Repository.EntitiesContext())
+            {
+                Model.UserProfile user = Mapper.Map<Model.UserProfile>(model);
+                //user.webpages_Roles.Add(_wrapper.GetRoleById(model.RoleId));
+                user.webpages_Roles.Add(c.webpages_Roles.Find(model.RoleId));
+                //_wrapper.CreateUser(Mapper.Map<Model.UserProfile>(model));
+                c.UserProfiles.Add(user);
+                c.SaveChanges();
+                return RedirectToAction("Index");
+            }
         }
 
         public ActionResult Edit(int id)

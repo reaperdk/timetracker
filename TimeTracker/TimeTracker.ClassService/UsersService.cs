@@ -26,7 +26,7 @@ namespace TimeTracker.ClassService
         {
             using (_repository = _getRepository())
             {
-                return _repository.Get().ToArray();
+                return _repository.Get(item => item.webpages_Roles).ToArray();
             }
         }
 
