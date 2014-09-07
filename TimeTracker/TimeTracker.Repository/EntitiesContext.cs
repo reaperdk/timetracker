@@ -8,7 +8,7 @@ using TimeTracker.Model;
 
 namespace TimeTracker.Repository
 {
-    public class EntitiesContext : DbContext
+    class EntitiesContext : DbContext
     {
         public EntitiesContext()
             : base("name=DefaultConnection")

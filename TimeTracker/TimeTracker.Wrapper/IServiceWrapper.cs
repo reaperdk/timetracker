@@ -9,12 +9,12 @@ namespace TimeTracker.Wrapper
 {
     public interface IServiceWrapper
     {
+        void InitializeRoles();
         IEnumerable<UserProfile> GetAllUsers();
         UserProfile GetUserById(int id);
-        void CreateUser(UserProfile user);
+        void CreateUser(UserProfile user, int roleId);
         void UpdateUser(UserProfile user);
         void RemoveUser(int id);
-        void InitializeRoles();
         IEnumerable<webpages_Roles> GetAllRoles();
         webpages_Roles GetRoleById(int id);
     }

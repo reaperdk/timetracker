@@ -13,6 +13,8 @@ namespace TimeTracker.Repository
         IQueryable<T> Get<TProperty>(Expression<Func<T, TProperty>> path);
         IQueryable<T> Get(Expression<Func<T, bool>> predicate);
         IQueryable<T> Get<TProperty>(Expression<Func<T, bool>> predicate, Expression<Func<T, TProperty>> path);
+        IQueryable<T2> GetAnother<T2>(Expression<Func<T2, bool>> predicate) where T2 : class;
+        IQueryable<T2> GetAnother<T2, TProperty>(Expression<Func<T2, bool>> predicate, Expression<Func<T2, TProperty>> path) where T2 : class;
         //Task<T> GetAsync(int id);
         void Insert(T entity);
         void Update(T entity);

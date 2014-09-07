@@ -31,6 +31,11 @@ namespace TimeTracker.Wrapper
             DatabaseInitializer.InitializeDatabase();
         }
 
+        public void InitializeRoles()
+        {
+            _rolesService.InitializeRoles();
+        }
+
         public IEnumerable<UserProfile> GetAllUsers()
         {
             return _usersService.GetAll();
@@ -41,9 +46,9 @@ namespace TimeTracker.Wrapper
             return _usersService.GetById(id);
         }
 
-        public void CreateUser(UserProfile user)
+        public void CreateUser(UserProfile user, int roleId)
         {
-            _usersService.Add(user);
+            _usersService.Add(user, roleId);
         }
 
         public void UpdateUser(UserProfile user)
@@ -54,11 +59,6 @@ namespace TimeTracker.Wrapper
         public void RemoveUser(int id)
         {
             _usersService.Remove(id);
-        }
-
-        public void InitializeRoles()
-        {
-            _rolesService.InitializeRoles();
         }
 
         public IEnumerable<webpages_Roles> GetAllRoles()

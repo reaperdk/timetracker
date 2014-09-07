@@ -13,7 +13,8 @@ namespace TimeTracker.Web
         {
             Mapper.CreateMap<Model.UserProfile, Web.Models.UserModel>()
                 .ForMember(dest => dest.Id, opts => opts.MapFrom(src => src.UserId))
-                .ForMember(dest => dest.RoleId, opts => opts.MapFrom(src => src.webpages_Roles.First().RoleId));
+                .ForMember(dest => dest.RoleId, opts => opts.MapFrom(src => src.webpages_Roles.First().RoleId))
+                .ForMember(dest => dest.RoleName, opts => opts.MapFrom(src => src.webpages_Roles.First().RoleName));
 
             Mapper.CreateMap<Web.Models.UserModel, Model.UserProfile>()
                 .ForMember(dest => dest.UserId, opts => opts.MapFrom(src => src.Id));

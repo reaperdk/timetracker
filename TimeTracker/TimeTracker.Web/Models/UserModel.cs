@@ -9,9 +9,12 @@ namespace TimeTracker.Web.Models
     public class UserModel
     {
         public int Id { get; set; }
+        [System.ComponentModel.DataAnnotations.Display(Name = "Login")]
         public string UserName { get; set; }
         [System.ComponentModel.DataAnnotations.Display(Name = "Role")]
         public int RoleId { get; set; }
+        [System.ComponentModel.DataAnnotations.Display(Name = "Role")]
+        public string RoleName { get; set; }
 
         public IEnumerable<SelectListItem> Roles { get; set; }
     }

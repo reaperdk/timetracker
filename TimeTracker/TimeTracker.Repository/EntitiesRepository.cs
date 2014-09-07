@@ -44,6 +44,16 @@ namespace TimeTracker.Repository
             return _context.Set<T>().Where(predicate).Include(path);
         }
 
+        public IQueryable<T2> GetAnother<T2>(Expression<Func<T2, bool>> predicate) where T2 : class
+        {
+            return _context.Set<T2>().Where(predicate);
+        }
+
+        public IQueryable<T2> GetAnother<T2, TProperty>(Expression<Func<T2, bool>> predicate, Expression<Func<T2, TProperty>> path) where T2 : class
+        {
+            return _context.Set<T2>().Where(predicate).Include(path);
+        }
+
         //public async Task<T> GetAsync(int id)
         //{
         //    return await _context.Set<T>().FindAsync(id);

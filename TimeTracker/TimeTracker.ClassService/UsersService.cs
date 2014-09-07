@@ -38,10 +38,11 @@ namespace TimeTracker.ClassService
             }
         }
 
-        public void Add(UserProfile user)
+        public void Add(UserProfile user, int roleId)
         {
             using (_repository = _getRepository())
             {
+                user.webpages_Roles = new [] { _repository.GetAnother<Model.webpages_Roles>(item => item.RoleId == roleId).First() };
                 _repository.Insert(user);
                 _repository.Save();
             }
