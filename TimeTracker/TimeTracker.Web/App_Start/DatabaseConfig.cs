@@ -20,6 +20,11 @@ namespace TimeTracker.Web
             _wrapper = wrapper;
         }
 
+        public static void InitializeDatabase()
+        {
+            ClassWrapper.InitializeDatabase();
+        }
+
         public void AddRoles()
         {
             _wrapper.InitializeRoles();

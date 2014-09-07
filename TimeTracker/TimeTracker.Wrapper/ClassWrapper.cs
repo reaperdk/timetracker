@@ -15,13 +15,18 @@ namespace TimeTracker.Wrapper
 
         public ClassWrapper()
         {
-            _usersService = new UsersService();
-            _rolesService = new RolesService();
+            _usersService = new ClassService.UsersService();
+            _rolesService = new ClassService.RolesService();
         }
         public ClassWrapper(IUsersService usersService, IRolesService rolesService)
         {
             _usersService = usersService;
             _rolesService = rolesService;
+        }
+
+        public static void InitializeDatabase()
+        {
+            DatabaseInitializer.InitializeDatabase();
         }
 
         public IEnumerable<UserProfile> GetAllUsers()

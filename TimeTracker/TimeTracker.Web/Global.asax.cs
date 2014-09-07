@@ -28,6 +28,7 @@ namespace TimeTracker.Web
             AuthConfig.RegisterAuth();
 
             MapperConfig.RegisterMapper();
+            DatabaseConfig.InitializeDatabase();
 
             var dbConfig = new DatabaseConfig();
             dbConfig.AddRoles();

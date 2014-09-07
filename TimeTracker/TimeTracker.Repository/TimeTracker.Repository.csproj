@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseInitializer.cs" />
     <Compile Include="EntitiesContext.cs" />
     <Compile Include="EntitiesRepository.cs" />
     <Compile Include="IEntitiesRepository.cs" />

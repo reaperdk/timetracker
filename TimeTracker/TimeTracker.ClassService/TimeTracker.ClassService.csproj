@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseInitializer.cs" />
     <Compile Include="IRolesService.cs" />
     <Compile Include="IUsersService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
