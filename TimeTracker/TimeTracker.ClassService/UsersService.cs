@@ -57,13 +57,13 @@ namespace TimeTracker.ClassService
         {
             using (_repository = _getRepository())
             {
+                UserProfile toUpdate = _repository.Get(item => item.UserId == user.UserId, item => item.webpages_Roles).First();
                 int roleId = user.webpages_Roles.First().RoleId;
-                user.webpages_Roles =
-                    new[]
-                    {
-                        _repository.GetAnother<Model.webpages_Roles>(item => item.RoleId == roleId).First()
-                    };
-                _repository.Update(user);
+                toUpdate.webpages_Roles.Clear();
+                toUpdate.webpages_Roles.Add(
+                    _repository.GetAnother<Model.webpages_Roles>(item => item.RoleId == roleId).First()
+                );
+                _repository.Update(toUpdate);
                 _repository.Save();
             }
         }

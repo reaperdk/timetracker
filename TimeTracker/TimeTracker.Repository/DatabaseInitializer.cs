@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,8 @@ namespace TimeTracker.Repository
     {
         public static void InitializeDatabase()
         {
+            Database.SetInitializer<EntitiesContext>(null);
+
             using (var context = new EntitiesContext())
             {
                 if (!context.Database.Exists())
@@ -19,6 +22,8 @@ namespace TimeTracker.Repository
                     ((IObjectContextAdapter)context).ObjectContext.CreateDatabase();
                 }
             }
+
+            //WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
         }
     }
 }

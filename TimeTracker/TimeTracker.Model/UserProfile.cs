@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace TimeTracker.Model
 {
+    [System.ComponentModel.DataAnnotations.Schema.Table("UserProfile")]
     public class UserProfile
     {
         public UserProfile()
