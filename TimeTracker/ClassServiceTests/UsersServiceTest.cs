@@ -17,7 +17,7 @@ namespace ClassServiceTests
         public void StartUp()
         {
             _fakeRepo = Substitute.For<IEntitiesRepository<UserProfile>>();
-            Func<IEntitiesRepository<UserProfile>> fakeGetRepository = () => fakeRepo;
+            Func<IEntitiesRepository<UserProfile>> fakeGetRepository = () => _fakeRepo;
 
             _usersService = new UsersService(fakeGetRepository);
         }
