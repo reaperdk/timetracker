@@ -23,6 +23,16 @@ namespace TimeTracker.WcfContract
     public interface IWcfContract
     {
         [OperationContract]
+        void InitializeRoles();
+        [OperationContract]
+        void InitializeCategories();
+        [OperationContract]
+        void InitializeStatuses();
+        [OperationContract]
+        void InitializePriorities();
+        [OperationContract]
+        void InitializeTypes();
+        [OperationContract]
         IEnumerable<UserProfile> GetAllUsers();
         [OperationContract]
         UserProfile GetUserById(int id);
@@ -33,10 +43,24 @@ namespace TimeTracker.WcfContract
         [OperationContract]
         void RemoveUser(int id);
         [OperationContract]
-        void InitializeRoles();
-        [OperationContract]
         IEnumerable<RoleModel> GetAllRoles();
         [OperationContract]
         RoleModel GetRoleById(int id);
+        [OperationContract]
+        IEnumerable<CategoryModel> GetAllCategories();
+        [OperationContract]
+        CategoryModel GetCategoryById(int id);
+        [OperationContract]
+        IEnumerable<StatusModel> GetAllStatuses();
+        [OperationContract]
+        StatusModel GetStatusById(int id);
+        [OperationContract]
+        IEnumerable<PriorityModel> GetAllPriorities();
+        [OperationContract]
+        PriorityModel GetPriorityById(int id);
+        [OperationContract]
+        IEnumerable<TypeModel> GetAllTypes();
+        [OperationContract]
+        TypeModel GetTypeById(int id);
     }
 }
