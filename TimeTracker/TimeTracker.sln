@@ -32,6 +32,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{5728CDBB-DE36-453E-A7AC-2C04143EF105}"
 	ProjectSection(SolutionItems) = preProject
+		..\docs\Capture.PNG = ..\docs\Capture.PNG
 		..\docs\IMAG0341.jpg = ..\docs\IMAG0341.jpg
 		..\docs\IMAG0342.jpg = ..\docs\IMAG0342.jpg
 	EndProjectSection
