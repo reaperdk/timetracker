@@ -10,14 +10,14 @@ namespace TimeTracker.ClassService
 {
     public class RolesService : IRolesService
     {
-        private IEntitiesRepository<webpages_Roles> _repository;
-        private readonly Func<IEntitiesRepository<webpages_Roles>> _getRepository;
+        private IEntitiesRepository<RoleModel> _repository;
+        private readonly Func<IEntitiesRepository<RoleModel>> _getRepository;
 
         public RolesService()
         {
-            _getRepository = () => new EntitiesRepository<webpages_Roles>();
+            _getRepository = () => new EntitiesRepository<RoleModel>();
         }
-        public RolesService(Func<IEntitiesRepository<webpages_Roles>> getRepository)
+        public RolesService(Func<IEntitiesRepository<RoleModel>> getRepository)
         {
             _getRepository = getRepository;
         }
@@ -28,14 +28,14 @@ namespace TimeTracker.ClassService
             {
                 if (!_repository.Get().Any())
                 {
-                    _repository.Insert(new webpages_Roles { RoleName = "admin" });
-                    _repository.Insert(new webpages_Roles { RoleName = "user" });
+                    _repository.Insert(new RoleModel { RoleName = "admin" });
+                    _repository.Insert(new RoleModel { RoleName = "user" });
                     _repository.Save();
                 }
             }
         }
 
-        public IEnumerable<webpages_Roles> GetAll()
+        public IEnumerable<RoleModel> GetAll()
         {
             using (_repository = _getRepository())
             {
@@ -43,7 +43,7 @@ namespace TimeTracker.ClassService
             }
         }
 
-        public webpages_Roles Get(int id)
+        public RoleModel Get(int id)
         {
             using (_repository = _getRepository())
             {

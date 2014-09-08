@@ -13,15 +13,15 @@ namespace TimeTracker.ClassService
         private IEntitiesRepository<UserProfile> _usersRepository;
         private readonly Func<IEntitiesRepository<UserProfile>> _getUsersRepository;
 
-        private IEntitiesRepository<webpages_Roles> _rolesRepository;
-        private readonly Func<IEntitiesRepository<webpages_Roles>> _getRolesRepository;
+        private IEntitiesRepository<RoleModel> _rolesRepository;
+        private readonly Func<IEntitiesRepository<RoleModel>> _getRolesRepository;
 
         public UsersRolesService()
         {
             _getUsersRepository = () => new EntitiesRepository<UserProfile>();
-            _getRolesRepository = () => new EntitiesRepository<webpages_Roles>();
+            _getRolesRepository = () => new EntitiesRepository<RoleModel>();
         }
-        public UsersRolesService(Func<IEntitiesRepository<webpages_Roles>> getRolesRepository, Func<IEntitiesRepository<UserProfile>> getUsersRepository)
+        public UsersRolesService(Func<IEntitiesRepository<RoleModel>> getRolesRepository, Func<IEntitiesRepository<UserProfile>> getUsersRepository)
         {
             _getUsersRepository = getUsersRepository;
             _getRolesRepository = getRolesRepository;

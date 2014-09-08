@@ -41,7 +41,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryModel.cs" />
-    <Compile Include="IModelBase.cs" />
     <Compile Include="PriorityModel.cs" />
     <Compile Include="ProjectModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

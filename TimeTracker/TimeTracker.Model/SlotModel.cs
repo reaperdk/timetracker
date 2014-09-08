@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace TimeTracker.Model
 {
-    public class SlotModel : IModelBase
+    [Table("Slots")]
+    public class SlotModel
     {
         public int Id { get; set; }
 

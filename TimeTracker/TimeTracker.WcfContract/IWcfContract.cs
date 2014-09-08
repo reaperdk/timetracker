@@ -24,8 +24,8 @@ namespace TimeTracker.WcfContract
         [OperationContract]
         void InitializeRoles();
         [OperationContract]
-        IEnumerable<webpages_Roles> GetAllRoles();
+        IEnumerable<RoleModel> GetAllRoles();
         [OperationContract]
-        webpages_Roles GetRoleById(int id);
+        RoleModel GetRoleById(int id);
     }
 }

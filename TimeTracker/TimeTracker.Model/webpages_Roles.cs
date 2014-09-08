@@ -1,19 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace TimeTracker.Model
 {
-    public class webpages_Roles
+    [Table("webpages_Roles")]
+    public class RoleModel
     {
-        public webpages_Roles()
+        public RoleModel()
         {
             this.UserProfiles = new HashSet<UserProfile>();
         }
     
-        [System.ComponentModel.DataAnnotations.Key]
+        [Key]
         public int RoleId { get; set; }
         public string RoleName { get; set; }
     

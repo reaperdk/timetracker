@@ -93,12 +93,12 @@ namespace TimeTracker.Wrapper
             _usersService.Remove(id);
         }
 
-        public IEnumerable<webpages_Roles> GetAllRoles()
+        public IEnumerable<RoleModel> GetAllRoles()
         {
             return _rolesService.GetAll();
         }
 
-        public webpages_Roles GetRoleById(int id)
+        public RoleModel GetRoleById(int id)
         {
             return _rolesService.Get(id);
         }

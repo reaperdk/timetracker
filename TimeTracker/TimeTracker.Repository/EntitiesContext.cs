@@ -16,9 +16,9 @@ namespace TimeTracker.Repository
         }
 
         public virtual IDbSet<UserProfile> UserProfiles { get; set; }
-        //public virtual IDbSet<webpages_Membership> webpages_Membership { get; set; }
-        //public virtual IDbSet<webpages_OAuthMembership> webpages_OAuthMembership { get; set; }
-        public virtual IDbSet<webpages_Roles> webpages_Roles { get; set; }
+        public virtual IDbSet<MembershipModel> Memberships { get; set; }
+        //public virtual IDbSet<OAuthMembershipModel> OAuthMemberships { get; set; }
+        public virtual IDbSet<RoleModel> Roles { get; set; }
 
         public virtual IDbSet<ProjectModel> Projects { get; set; }
         public virtual IDbSet<TaskModel> Tasks { get; set; }
@@ -40,9 +40,27 @@ namespace TimeTracker.Repository
                 .WithMany(t => t.AssigningTasks)
                 .HasForeignKey(m => m.AssigningPersonId)
                 .WillCascadeOnDelete(false);
-            //modelBuilder.Entity<UserProfile>()
-            //    .HasRequired(u => u.webpages_Membership)
-            //    .WithRequiredDependent(x => x.UserProfile);
+
+            modelBuilder.Entity<ProjectModel>()
+                .HasMany(p => p.Users).WithMany(u => u.Projects)
+                .Map(
+                    association =>
+                    {
+                        association.MapLeftKey("ProjectId");
+                        association.MapRightKey("UserId");
+                        association.ToTable("UsersProjects");
+                    }
+                );
+            modelBuilder.Entity<RoleModel>()
+                .HasMany(r => r.UserProfiles).WithMany(u => u.webpages_Roles)
+                .Map(
+                    association =>
+                    {
+                        association.MapLeftKey("RoleId");
+                        association.MapRightKey("UserId");
+                        association.ToTable("UsersInRoles");
+                    }
+                );
         }
     }
 }

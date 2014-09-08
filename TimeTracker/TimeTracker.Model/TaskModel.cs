@@ -4,7 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TimeTracker.Model
 {
-    public class TaskModel : IModelBase
+    [Table("Tasks")]
+    public class TaskModel
     {
         public int Id { get; set; }
 
