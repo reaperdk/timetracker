@@ -1,0 +1,26 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="717" measuredH="400" mockupW="717" mockupH="400">
+  <controls>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="0" y="0" w="717" h="400" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//Index</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::MenuBar" x="409" y="86" w="-1" h="-1" measuredW="137" measuredH="29" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Register%2C%20Login</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="39" y="123" w="579" h="231" measuredW="200" measuredH="122" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>0</selectedIndex>
+        <text>My%20Projects%0AUsers</text>
+        <verticalScrollbar>false</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::DataGrid" x="135" y="145" w="-1" h="-1" measuredW="457" measuredH="111" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Project%2C%20My%20Active%20Tasks%2C%20My%20Closed%20Tasks%2C%20My%20Suspended%20Tasks%0AProject%20One%2C%204%2C%206%2C%201%0AProject%20Two%2C%2010%2C%201%2C%202%0AProject%20Three%2C%205%2C%204%2C%200</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

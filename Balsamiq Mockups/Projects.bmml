@@ -1,0 +1,88 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1445" measuredH="596" mockupW="1445" mockupH="562">
+  <controls>
+    <control controlID="21" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="765" y="224" w="652" h="296" measuredW="200" measuredH="182" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>1</selectedIndex>
+        <text>Time%20Board%0AActive%20Tasks%0ACompleted%20Tasks%0ASuspended%20Tasks</text>
+        <verticalScrollbar>false</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="22" controlTypeID="com.balsamiq.mockups::DataGrid" x="901" y="260" w="-1" h="-1" measuredW="485" measuredH="111" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Task%20%5Ev%2C%20Assigned%20person%20%5Ev%2C%20Priority%20%5Ev%2C%20Time%20estimate%20%5Ev%2C%20Type%20%5Ev%2C%20Category%20%5Ev%0ATask1%2C%20Micha%u0142%20Kowalski%2C%20High%2C%205d%2C%20Task%2C%20Easy%0ATask2%2C%20Adam%20Nowak%2C%20Low%2C%201d%2C%20Bug%2C%20Difficult%0ATask3%2C%20Don%20Kichot%2C%20Medium%2C%203h%2C%20Epic%2C%20Difficult%0A%7B65L%2C%200R%2C%2035%2C%200C%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="0" y="34" w="707" h="562" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//Projects/1</text>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="15" y="224" w="652" h="296" measuredW="200" measuredH="182" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>0</selectedIndex>
+        <text>Time%20Board%0AActive%20Tasks%0ACompleted%20Tasks%0ASuspended%20Tasks</text>
+        <verticalScrollbar>false</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::Title" x="153" y="142" w="-1" h="-1" measuredW="248" measuredH="43" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Project%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="28" controlTypeID="com.balsamiq.mockups::DataGrid" x="153" y="185" w="204" h="24" measuredW="194" measuredH="23" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <hasHeader>false</hasHeader>
+        <hLines>false</hLines>
+        <rowHeight>18</rowHeight>
+        <text>Team%20Leader%2C%20Adam%20Kowalski</text>
+      </controlProperties>
+    </control>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::List" x="437" y="255" w="116" h="51" measuredW="100" measuredH="126" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <hasHeader>true</hasHeader>
+        <text>Suspended%20Tasks%0A5</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::List" x="295" y="255" w="116" h="51" measuredW="100" measuredH="126" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <hasHeader>true</hasHeader>
+        <text>Completed%20Tasks%0A15</text>
+      </controlProperties>
+    </control>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::List" x="153" y="255" w="116" h="51" measuredW="100" measuredH="126" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <hasHeader>true</hasHeader>
+        <text>Active%20Tasks%0A25</text>
+      </controlProperties>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::DataGrid" x="153" y="342" w="-1" h="-1" measuredW="400" measuredH="111" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Task%20%5Ev%2C%20Time%20estimate%20%5Ev%2C%201-7/09/14%2C%208-14/09/14%2C%20...%2C%20Summary%0ATask1%2C%205d%2C%201d%2C%204d%2C%20-%2C%205d%28OK%29%0ATask2%2C%206d%2C%203d%2C%204d%2C%20-%2C%207d%28+1d%29%0ATask3%2C%204d%2C%201d%2C%202d%2C%20-%2C%203d%28-1d%29%0A%7B65L%2C%200R%2C%2035%2C%200C%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="37" controlTypeID="__group__" x="738" y="34" w="707" h="562" measuredW="707" measuredH="562" zOrder="8" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="0" y="0" w="707" h="562" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="37">
+          <controlProperties>
+            <text>A%20Web%20Page%0Ahttp%3A//Projects/1</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="154" y="108" w="248" h="-1" measuredW="248" measuredH="43" zOrder="1" locked="false" isInGroup="37">
+          <controlProperties>
+            <text>Project%20Name</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::DataGrid" x="154" y="151" w="204" h="24" measuredW="194" measuredH="23" zOrder="2" locked="false" isInGroup="37">
+          <controlProperties>
+            <borderStyle>square</borderStyle>
+            <hasHeader>false</hasHeader>
+            <hLines>false</hLines>
+            <rowHeight>18</rowHeight>
+            <text>Team%20Leader%2C%20Adam%20Kowalski</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>
