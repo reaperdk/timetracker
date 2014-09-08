@@ -37,7 +37,7 @@ namespace TimeTracker.WcfContract
         [OperationContract]
         UserProfile GetUserById(int id);
         [OperationContract]
-        void CreateUser(UserProfile user);
+        void AddUser(UserProfile user);
         [OperationContract]
         void UpdateUser(UserProfile user);
         [OperationContract]

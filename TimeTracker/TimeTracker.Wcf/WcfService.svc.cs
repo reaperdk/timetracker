@@ -29,7 +29,7 @@ namespace TimeTracker.Wcf
             return _usersService.GetAll();
         }
 
-        public void CreateUser(UserProfile user)
+        public void AddUser(UserProfile user)
         {
             throw new NotImplementedException();
         }

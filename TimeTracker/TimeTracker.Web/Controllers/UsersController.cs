@@ -50,7 +50,7 @@ namespace TimeTracker.Web.Controllers
         [HttpPost]
         public ActionResult Create(Web.Models.UserModel model)
         {
-            _wrapper.CreateUser(Mapper.Map<Model.UserProfile>(model));
+            _wrapper.AddUser(Mapper.Map<Model.UserProfile>(model));
             return RedirectToAction("Index");
         }
 
