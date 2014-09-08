@@ -29,7 +29,7 @@ namespace TimeTracker.Wcf
             return _usersService.GetAll();
         }
 
-        public void AddUser(UserProfile user)
+        public bool AddUser(UserProfile user)
         {
             throw new NotImplementedException();
         }
@@ -114,12 +114,12 @@ namespace TimeTracker.Wcf
             throw new NotImplementedException();
         }
 
-        public void RemoveUser(int id)
+        public bool RemoveUser(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateUser(UserProfile user)
+        public bool UpdateUser(UserProfile user)
         {
             throw new NotImplementedException();
         }

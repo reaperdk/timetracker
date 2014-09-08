@@ -16,9 +16,9 @@ namespace TimeTracker.Wrapper
         void InitializeTypes();
         IEnumerable<UserProfile> GetAllUsers();
         UserProfile GetUserById(int id);
-        void AddUser(UserProfile user);
-        void UpdateUser(UserProfile user);
-        void RemoveUser(int id);
+        bool AddUser(UserProfile user);
+        bool UpdateUser(UserProfile user);
+        bool RemoveUser(int id);
         IEnumerable<RoleModel> GetAllRoles();
         RoleModel GetRoleById(int id);
         IEnumerable<CategoryModel> GetAllCategories();

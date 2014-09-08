@@ -78,19 +78,25 @@ namespace TimeTracker.Wrapper
             return _usersService.GetById(id);
         }
 
-        public void AddUser(UserProfile user)
+        public bool AddUser(UserProfile user)
         {
             _usersService.Add(user);
+            //TODO: return user add result
+            return true;
         }
 
-        public void UpdateUser(UserProfile user)
+        public bool UpdateUser(UserProfile user)
         {
             _usersService.Update(user);
+            //TODO: return user update result
+            return true;
         }
         
-        public void RemoveUser(int id)
+        public bool RemoveUser(int id)
         {
             _usersService.Remove(id);
+            //TODO: return user remove result
+            return true;
         }
 
         public IEnumerable<RoleModel> GetAllRoles()

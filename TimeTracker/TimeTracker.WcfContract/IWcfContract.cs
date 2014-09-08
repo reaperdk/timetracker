@@ -32,16 +32,29 @@ namespace TimeTracker.WcfContract
         void InitializePriorities();
         [OperationContract]
         void InitializeTypes();
+        /// <summary>
+        /// Returns all users from database
+        /// </summary>
+        /// <returns>All users</returns>
         [OperationContract]
         IEnumerable<UserProfile> GetAllUsers();
+        /// <summary>
+        /// Returns user by user's id
+        /// </summary>
+        /// <param name="id">Id of desired user</param>
+        /// <returns>UserProfile if exist, otherwise null</returns>
         [OperationContract]
         UserProfile GetUserById(int id);
+        /// <summary>
+        /// Adds user to database
+        /// </summary>
+        /// <param name="user">Username</param>
         [OperationContract]
-        void AddUser(UserProfile user);
+        bool AddUser(UserProfile user);
         [OperationContract]
-        void UpdateUser(UserProfile user);
+        bool UpdateUser(UserProfile user);
         [OperationContract]
-        void RemoveUser(int id);
+        bool RemoveUser(int id);
         [OperationContract]
         IEnumerable<RoleModel> GetAllRoles();
         [OperationContract]
