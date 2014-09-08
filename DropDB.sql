@@ -2,10 +2,10 @@
   DROP TABLE __MigrationHistory;
 IF OBJECT_ID('SlotModels', 'U') IS NOT NULL
   DROP TABLE SlotModels;
-IF OBJECT_ID('UserModelProjectModels', 'U') IS NOT NULL
-  DROP TABLE UserModelProjectModels;
-IF OBJECT_ID('ProjectModelUserModels', 'U') IS NOT NULL
-  DROP TABLE ProjectModelUserModels;
+IF OBJECT_ID('UserProfileProjectModels', 'U') IS NOT NULL
+  DROP TABLE UserProfileProjectModels;
+IF OBJECT_ID('ProjectModelUserProfiles', 'U') IS NOT NULL
+  DROP TABLE ProjectModelUserProfiles;
 IF OBJECT_ID('TaskModels', 'U') IS NOT NULL
   DROP TABLE TaskModels;
 IF OBJECT_ID('ProjectModels', 'U') IS NOT NULL
@@ -22,8 +22,10 @@ IF OBJECT_ID('CategoryModels', 'U') IS NOT NULL
   DROP TABLE CategoryModels;
 IF OBJECT_ID('webpages_UsersInRoles', 'U') IS NOT NULL
   DROP TABLE webpages_UsersInRoles;
-IF OBJECT_ID('UserProfile', 'U') IS NOT NULL
-  DROP TABLE UserProfile;
+IF OBJECT_ID('webpages_RolesUserProfile', 'U') IS NOT NULL
+  DROP TABLE webpages_RolesUserProfile;
+IF OBJECT_ID('UserProfiles', 'U') IS NOT NULL
+  DROP TABLE UserProfiles;
 IF OBJECT_ID('webpages_Membership', 'U') IS NOT NULL
   DROP TABLE webpages_Membership;
 IF OBJECT_ID('webpages_OAuthMembership', 'U') IS NOT NULL
