@@ -8,6 +8,17 @@ using TimeTracker.Model;
 
 namespace TimeTracker.WcfContract
 {
+    [ServiceKnownType(typeof(Model.CategoryModel))]
+    [ServiceKnownType(typeof(Model.MembershipModel))]
+    [ServiceKnownType(typeof(Model.OAuthMembershipModel))]
+    [ServiceKnownType(typeof(Model.PriorityModel))]
+    [ServiceKnownType(typeof(Model.ProjectModel))]
+    [ServiceKnownType(typeof(Model.RoleModel))]
+    [ServiceKnownType(typeof(Model.SlotModel))]
+    [ServiceKnownType(typeof(Model.StatusModel))]
+    [ServiceKnownType(typeof(Model.TaskModel))]
+    [ServiceKnownType(typeof(Model.TypeModel))]
+    [ServiceKnownType(typeof(Model.UserProfile))]
     [ServiceContract(SessionMode = SessionMode.Allowed)]
     public interface IWcfContract
     {
