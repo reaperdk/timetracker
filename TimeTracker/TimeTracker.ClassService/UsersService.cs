@@ -46,7 +46,7 @@ namespace TimeTracker.ClassService
                 user.webpages_Roles =
                     new []
                     {
-                        _repository.GetAnother<Model.webpages_Roles>(item => item.RoleId == roleId).First()
+                        _repository.GetAnother<Model.RoleModel>(item => item.RoleId == roleId).First()
                     };
                 _repository.Insert(user);
                 _repository.Save();
@@ -61,7 +61,7 @@ namespace TimeTracker.ClassService
                 int roleId = user.webpages_Roles.First().RoleId;
                 toUpdate.webpages_Roles.Clear();
                 toUpdate.webpages_Roles.Add(
-                    _repository.GetAnother<Model.webpages_Roles>(item => item.RoleId == roleId).First()
+                    _repository.GetAnother<Model.RoleModel>(item => item.RoleId == roleId).First()
                 );
                 _repository.Update(toUpdate);
                 _repository.Save();

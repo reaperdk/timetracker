@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace TimeTracker.Model
 {
-    public class PriorityModel : IModelBase
+    [Table("Priorities")]
+    public class PriorityModel
     {
         public int Id { get; set; }
 

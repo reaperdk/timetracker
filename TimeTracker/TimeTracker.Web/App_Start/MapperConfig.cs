@@ -20,7 +20,7 @@ namespace TimeTracker.Web
                 .ForMember(dest => dest.UserId, opts => opts.MapFrom(src => src.Id))
                 .ForMember(
                     dest => dest.webpages_Roles,
-                    opts => opts.MapFrom(src => new [] { new Model.webpages_Roles { RoleId = src.RoleId } })
+                    opts => opts.MapFrom(src => new [] { new Model.RoleModel { RoleId = src.RoleId } })
                 );
         }
     }

@@ -54,12 +54,12 @@ namespace TimeTracker.Wcf
             throw new NotImplementedException();
         }
 
-        public IEnumerable<webpages_Roles> GetAllRoles()
+        public IEnumerable<RoleModel> GetAllRoles()
         {
             throw new NotImplementedException();
         }
 
-        public webpages_Roles GetRoleById(int id)
+        public RoleModel GetRoleById(int id)
         {
             throw new NotImplementedException();
         }

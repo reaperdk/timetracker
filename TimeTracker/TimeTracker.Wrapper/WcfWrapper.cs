@@ -49,12 +49,12 @@ namespace TimeTracker.Wrapper
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Model.webpages_Roles> GetAllRoles()
+        public IEnumerable<Model.RoleModel> GetAllRoles()
         {
             throw new NotImplementedException();
         }
 
-        public Model.webpages_Roles GetRoleById(int id)
+        public Model.RoleModel GetRoleById(int id)
         {
             throw new NotImplementedException();
         }

@@ -6,8 +6,8 @@ using System.Text;
 
 namespace TimeTracker.Model
 {
-    //[Table("Projects")]
-    public class ProjectModel : IModelBase
+    [Table("Projects")]
+    public class ProjectModel
     {
         public int Id { get; set; }
 

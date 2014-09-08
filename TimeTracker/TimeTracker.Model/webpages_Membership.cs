@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TimeTracker.Model
 {
-    public class webpages_Membership
+    [Table("webpages_Membership")]
+    public class MembershipModel
     {
-        [System.ComponentModel.DataAnnotations.Key]
+        [Key, ForeignKey("UserProfile")]
         public int UserId { get; set; }
         public Nullable<System.DateTime> CreateDate { get; set; }
         public string ConfirmationToken { get; set; }

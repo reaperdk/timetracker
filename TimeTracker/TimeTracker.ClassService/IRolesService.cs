@@ -10,7 +10,7 @@ namespace TimeTracker.ClassService
     public interface IRolesService
     {
         void InitializeRoles();
-        IEnumerable<webpages_Roles> GetAll();
-        webpages_Roles Get(int id);
+        IEnumerable<RoleModel> GetAll();
+        RoleModel Get(int id);
     }
 }
