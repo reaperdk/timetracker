@@ -16,7 +16,7 @@ namespace TimeTracker.Wrapper
         void InitializeTypes();
         IEnumerable<UserProfile> GetAllUsers();
         UserProfile GetUserById(int id);
-        void CreateUser(UserProfile user, int roleId);
+        void CreateUser(UserProfile user);
         void UpdateUser(UserProfile user);
         void RemoveUser(int id);
         IEnumerable<webpages_Roles> GetAllRoles();

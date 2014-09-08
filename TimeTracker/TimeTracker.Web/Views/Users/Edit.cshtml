@@ -26,6 +26,14 @@
             @Html.ValidationMessageFor(model => model.UserName)
         </div>
 
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RoleId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.RoleId, Model.Roles)
+            @Html.ValidationMessageFor(model => model.RoleId)
+        </div>
+
         <p>
             <input type="submit" value="Save" />
         </p>

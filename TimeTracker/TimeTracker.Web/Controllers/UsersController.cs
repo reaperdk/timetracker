@@ -50,22 +50,22 @@ namespace TimeTracker.Web.Controllers
         [HttpPost]
         public ActionResult Create(Web.Models.UserModel model)
         {
-            _wrapper.CreateUser(Mapper.Map<Model.UserProfile>(model), model.RoleId);
+            _wrapper.CreateUser(Mapper.Map<Model.UserProfile>(model));
             return RedirectToAction("Index");
         }
 
         public ActionResult Edit(int id)
         {
-            return View(
-                Mapper.Map<Web.Models.UserModel>(_wrapper.GetUserById(id))
-            );
+            Web.Models.UserModel model = Mapper.Map<Web.Models.UserModel>(_wrapper.GetUserById(id));
+            model.Roles = new SelectList(_wrapper.GetAllRoles(), "RoleId", "RoleName");
+            return View(model);
         }
 
         [HttpPost]
-        public ActionResult Edit(int id, Model.UserProfile model)
+        public ActionResult Edit(int id, Web.Models.UserModel model)
         {
             _wrapper.UpdateUser(
-                Mapper.Map<Model.UserProfile>(model)
+                Mapper.Map<Model.UserProfile>(Mapper.Map<Model.UserProfile>(model))
             );
             return RedirectToAction("Index");
         }

@@ -11,7 +11,7 @@ namespace TimeTracker.ClassService
     {
         IEnumerable<UserProfile> GetAll();
         UserProfile GetById(int id);
-        void Add(UserProfile user, int roleId);
+        void Add(UserProfile user);
         void Update(UserProfile user);
         void Remove(int id);
     }

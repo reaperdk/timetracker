@@ -78,9 +78,9 @@ namespace TimeTracker.Wrapper
             return _usersService.GetById(id);
         }
 
-        public void CreateUser(UserProfile user, int roleId)
+        public void CreateUser(UserProfile user)
         {
-            _usersService.Add(user, roleId);
+            _usersService.Add(user);
         }
 
         public void UpdateUser(UserProfile user)

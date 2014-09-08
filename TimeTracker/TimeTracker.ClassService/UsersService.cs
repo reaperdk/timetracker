@@ -34,15 +34,20 @@ namespace TimeTracker.ClassService
         {
             using (_repository = _getRepository())
             {
-                return _repository.Get(id);
+                return _repository.Get(item => item.UserId == id, item => item.webpages_Roles).First();
             }
         }
 
-        public void Add(UserProfile user, int roleId)
+        public void Add(UserProfile user)
         {
             using (_repository = _getRepository())
             {
-                user.webpages_Roles = new [] { _repository.GetAnother<Model.webpages_Roles>(item => item.RoleId == roleId).First() };
+                int roleId = user.webpages_Roles.First().RoleId;
+                user.webpages_Roles =
+                    new []
+                    {
+                        _repository.GetAnother<Model.webpages_Roles>(item => item.RoleId == roleId).First()
+                    };
                 _repository.Insert(user);
                 _repository.Save();
             }
@@ -52,6 +57,12 @@ namespace TimeTracker.ClassService
         {
             using (_repository = _getRepository())
             {
+                int roleId = user.webpages_Roles.First().RoleId;
+                user.webpages_Roles =
+                    new[]
+                    {
+                        _repository.GetAnother<Model.webpages_Roles>(item => item.RoleId == roleId).First()
+                    };
                 _repository.Update(user);
                 _repository.Save();
             }
