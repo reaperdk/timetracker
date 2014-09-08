@@ -29,27 +29,17 @@ namespace TimeTracker.Wcf
             return _usersService.GetAll();
         }
 
-        public UserProfile GetUserById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public void CreateUser(UserProfile user)
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateUser(UserProfile user)
+        public IEnumerable<CategoryModel> GetAllCategories()
         {
             throw new NotImplementedException();
         }
 
-        public void RemoveUser(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void InitializeRoles()
+        public IEnumerable<PriorityModel> GetAllPriorities()
         {
             throw new NotImplementedException();
         }
@@ -59,7 +49,77 @@ namespace TimeTracker.Wcf
             throw new NotImplementedException();
         }
 
+        public IEnumerable<StatusModel> GetAllStatuses()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<TypeModel> GetAllTypes()
+        {
+            throw new NotImplementedException();
+        }
+
+        public CategoryModel GetCategoryById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public PriorityModel GetPriorityById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public RoleModel GetRoleById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public StatusModel GetStatusById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public TypeModel GetTypeById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public UserProfile GetUserById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void InitializeCategories()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void InitializePriorities()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void InitializeRoles()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void InitializeStatuses()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void InitializeTypes()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveUser(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateUser(UserProfile user)
         {
             throw new NotImplementedException();
         }
