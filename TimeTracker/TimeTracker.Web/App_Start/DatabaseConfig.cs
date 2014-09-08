@@ -29,5 +29,25 @@ namespace TimeTracker.Web
         {
             _wrapper.InitializeRoles();
         }
+
+        public void AddCategories()
+        {
+            _wrapper.InitializeCategories();
+        }
+
+        public void AddStatuses()
+        {
+            _wrapper.InitializeStatuses();
+        }
+
+        public void AddPriorities()
+        {
+            _wrapper.InitializePriorities();
+        }
+
+        public void AddTypes()
+        {
+            _wrapper.InitializeTypes();
+        }
     }
 }

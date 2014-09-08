@@ -32,6 +32,10 @@ namespace TimeTracker.Web
 
             var dbConfig = new DatabaseConfig();
             dbConfig.AddRoles();
+            dbConfig.AddCategories();
+            dbConfig.AddStatuses();
+            dbConfig.AddPriorities();
+            dbConfig.AddTypes();
         }
     }
 }
