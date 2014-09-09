@@ -17,11 +17,28 @@ namespace TimeTracker.Wcf
         //These service classes will be used to connect to database and do necessary things
         private readonly IUsersService _usersService;
         private readonly IRolesService _rolesService;
+        private readonly ICategoriesService _categoriesService;
+        private readonly IPrioritiesService _prioritiesService;
+        private readonly ITypesService _typesService;
+        private readonly IUsersRolesService _usersRolesService;
+        private readonly IStatusesService _statusesService;
 
-        public WcfService(IUsersService usersService, IRolesService rolesService)
+        public WcfService(
+            IUsersService usersService, 
+            IRolesService rolesService,
+            ICategoriesService categoriesService,
+            IPrioritiesService prioritiesService,
+            ITypesService typesService,
+            IUsersRolesService usersRolesService,
+            IStatusesService statusesService)
 	    {
             _usersService = usersService;
             _rolesService = rolesService;
+            _categoriesService = categoriesService;
+            _prioritiesService = prioritiesService;
+            _typesService = typesService;
+            _usersRolesService = usersRolesService;
+            _statusesService = statusesService;
 	    }
 
         public IEnumerable<UserProfile> GetAllUsers()
@@ -31,97 +48,103 @@ namespace TimeTracker.Wcf
 
         public bool AddUser(UserProfile user)
         {
-            throw new NotImplementedException();
+            _usersService.Add(user);
+            //TODO: _usersService.Add should return value if function finished succesfully. Now it is void
+            return true;
         }
 
         public IEnumerable<CategoryModel> GetAllCategories()
         {
-            throw new NotImplementedException();
+            return _categoriesService.GetAll();
         }
 
         public IEnumerable<PriorityModel> GetAllPriorities()
         {
-            throw new NotImplementedException();
+            return _prioritiesService.GetAll();
         }
 
         public IEnumerable<RoleModel> GetAllRoles()
         {
-            throw new NotImplementedException();
+            return _rolesService.GetAll();
         }
 
         public IEnumerable<StatusModel> GetAllStatuses()
         {
-            throw new NotImplementedException();
+            return _statusesService.GetAll();
         }
 
         public IEnumerable<TypeModel> GetAllTypes()
         {
-            throw new NotImplementedException();
+            return _typesService.GetAll();
         }
 
         public CategoryModel GetCategoryById(int id)
         {
-            throw new NotImplementedException();
+            return _categoriesService.Get(id);
         }
 
         public PriorityModel GetPriorityById(int id)
         {
-            throw new NotImplementedException();
+            return _prioritiesService.Get(id);
         }
 
         public RoleModel GetRoleById(int id)
         {
-            throw new NotImplementedException();
+            return _rolesService.Get(id);
         }
 
         public StatusModel GetStatusById(int id)
         {
-            throw new NotImplementedException();
+            return _statusesService.Get(id);
         }
 
         public TypeModel GetTypeById(int id)
         {
-            throw new NotImplementedException();
+            return _typesService.Get(id);
         }
 
         public UserProfile GetUserById(int id)
         {
-            throw new NotImplementedException();
+            return _usersService.GetById(id);
         }
 
         public void InitializeCategories()
         {
-            throw new NotImplementedException();
+            _categoriesService.InitializeCategories();
         }
 
         public void InitializePriorities()
         {
-            throw new NotImplementedException();
+            _prioritiesService.InitializePriorities();
         }
 
         public void InitializeRoles()
         {
-            throw new NotImplementedException();
+            _rolesService.InitializeRoles();
         }
 
         public void InitializeStatuses()
         {
-            throw new NotImplementedException();
+            _statusesService.InitializeStatuses();
         }
 
         public void InitializeTypes()
         {
-            throw new NotImplementedException();
+            _typesService.InitializeTypes();
         }
 
         public bool RemoveUser(int id)
         {
-            throw new NotImplementedException();
+            _usersService.Remove(id);
+            //TODO: _usersService.Remove should return boolean answer
+            return true;
         }
 
         public bool UpdateUser(UserProfile user)
         {
-            throw new NotImplementedException();
+            _usersService.Update(user);
+            //TODO: _usersService.Update should return boolean answer
+            return true;
         }
     }
 }
