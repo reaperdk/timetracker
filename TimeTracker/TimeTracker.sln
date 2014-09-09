@@ -43,6 +43,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.Common", "TimeT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.WcfContract", "TimeTracker.WcfContract\TimeTracker.WcfContract.csproj", "{CAEDE7D1-4F13-4EED-9F6A-4161C5D383E6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Balsamiq Mockups", "Balsamiq Mockups", "{C11267DC-C3BD-438C-AEEF-75C489E7CCBA}"
+	ProjectSection(SolutionItems) = preProject
+		..\Balsamiq Mockups\Index.bmml = ..\Balsamiq Mockups\Index.bmml
+		..\Balsamiq Mockups\myBalsamiqProject.pdf = ..\Balsamiq Mockups\myBalsamiqProject.pdf
+		..\Balsamiq Mockups\Projects.bmml = ..\Balsamiq Mockups\Projects.bmml
+		..\Balsamiq Mockups\Tasks.bmml = ..\Balsamiq Mockups\Tasks.bmml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -106,5 +114,6 @@ Global
 		{46B5A7AC-1ED5-4B9B-9370-8EB604EFAE09} = {BE54BBFA-6727-4FC2-A953-67C843FB5B0D}
 		{8AA231B0-559A-4ED9-9D96-12B6C4844273} = {BE54BBFA-6727-4FC2-A953-67C843FB5B0D}
 		{5728CDBB-DE36-453E-A7AC-2C04143EF105} = {BBEAA0FB-72C7-41EC-A273-3F3292CFD9C8}
+		{C11267DC-C3BD-438C-AEEF-75C489E7CCBA} = {BBEAA0FB-72C7-41EC-A273-3F3292CFD9C8}
 	EndGlobalSection
 EndGlobal
