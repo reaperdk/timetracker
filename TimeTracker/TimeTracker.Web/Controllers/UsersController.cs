@@ -11,6 +11,7 @@ using System.Web.Security;
 
 namespace TimeTracker.Web.Controllers
 {
+    [Authorize]
     public class UsersController : Controller
     {
         private readonly IServiceWrapper _wrapper;
@@ -40,6 +41,7 @@ namespace TimeTracker.Web.Controllers
             );
         }
 
+        [Authorize(Roles = "admin")]
         public ActionResult Create()
         {
             return View(
@@ -52,6 +54,7 @@ namespace TimeTracker.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public ActionResult Create(Web.Models.UserModel model)
         {
             string salt = WebSecurityService.GetSalt();
@@ -60,6 +63,7 @@ namespace TimeTracker.Web.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = "admin")]
         public ActionResult Edit(int id)
         {
             Web.Models.UserModel model = Mapper.Map<Web.Models.UserModel>(_wrapper.GetUserById(id));
@@ -68,6 +72,7 @@ namespace TimeTracker.Web.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public ActionResult Edit(int id, Web.Models.UserModel model)
         {
             _wrapper.UpdateUser(
@@ -76,6 +81,7 @@ namespace TimeTracker.Web.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = "admin")]
         public ActionResult Delete(int id)
         {
             return View(
@@ -84,6 +90,7 @@ namespace TimeTracker.Web.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "admin")]
         public ActionResult Delete(Web.Models.UserModel user)
         {
             ((SimpleMembershipProvider)Membership.Provider).DeleteAccount(user.UserName);

@@ -58,7 +58,7 @@ namespace TimeTracker.Repository
                     {
                         association.MapLeftKey("RoleId");
                         association.MapRightKey("UserId");
-                        association.ToTable("UsersInRoles");
+                        association.ToTable("webpages_UsersInRoles");
                     }
                 );
         }
