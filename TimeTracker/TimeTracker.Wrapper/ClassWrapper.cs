@@ -12,6 +12,7 @@ namespace TimeTracker.Wrapper
     {
         private readonly IUsersService _usersService;
         private readonly IMembershipsService _membershipsService;
+        private readonly IUserMembershipsService _userMembershipsService;
         private readonly IRolesService _rolesService;
         private readonly IUsersRolesService _usersRolesService;
         private readonly ICategoriesService _categoriesService;
@@ -23,6 +24,7 @@ namespace TimeTracker.Wrapper
         {
             _usersService = new UsersService();
             _membershipsService = new MembershipsService();
+            _userMembershipsService = new UserMembershipsService();
             _rolesService = new RolesService();
             _usersRolesService = new UsersRolesService();
             _categoriesService = new CategoriesService();
@@ -79,6 +81,11 @@ namespace TimeTracker.Wrapper
         public UserModel GetUserById(int id)
         {
             return _usersService.GetById(id);
+        }
+
+        public string GetSaltByUserName(string userName)
+        {
+            return _userMembershipsService.GetSaltByUserName(userName);
         }
 
         public bool UpdateCreatedUser(UserModel user, string salt)

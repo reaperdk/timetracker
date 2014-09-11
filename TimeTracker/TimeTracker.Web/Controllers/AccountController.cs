@@ -10,6 +10,7 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using TimeTracker.Web.Filters;
 using TimeTracker.Web.Models;
+using TimeTracker.Wrapper;
 
 namespace TimeTracker.Web.Controllers
 {
@@ -17,6 +18,8 @@ namespace TimeTracker.Web.Controllers
     //[InitializeSimpleMembership]
     public class AccountController : Controller
     {
+        private IServiceWrapper _wrapper = new ClassWrapper();
+
         //
         // GET: /Account/Login
 
@@ -35,7 +38,8 @@ namespace TimeTracker.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginModel model, string returnUrl)
         {
-            if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
+            string salt = _wrapper.GetSaltByUserName(model.UserName);
+            if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password + salt, persistCookie: model.RememberMe))
             {
                 return RedirectToLocal(returnUrl);
             }

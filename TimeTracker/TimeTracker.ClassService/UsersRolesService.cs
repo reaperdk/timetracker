@@ -21,7 +21,7 @@ namespace TimeTracker.ClassService
             _getUsersRepository = () => new EntitiesRepository<UserModel>();
             _getRolesRepository = () => new EntitiesRepository<RoleModel>();
         }
-        public UsersRolesService(Func<IEntitiesRepository<RoleModel>> getRolesRepository, Func<IEntitiesRepository<UserModel>> getUsersRepository)
+        public UsersRolesService(Func<IEntitiesRepository<UserModel>> getUsersRepository, Func<IEntitiesRepository<RoleModel>> getRolesRepository)
         {
             _getUsersRepository = getUsersRepository;
             _getRolesRepository = getRolesRepository;

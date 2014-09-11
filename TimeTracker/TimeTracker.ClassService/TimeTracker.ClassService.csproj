@@ -47,6 +47,7 @@
     <Compile Include="IRolesService.cs" />
     <Compile Include="IStatusesService.cs" />
     <Compile Include="ITypesService.cs" />
+    <Compile Include="IUserMembershipsService.cs" />
     <Compile Include="IUsersRolesService.cs" />
     <Compile Include="IUsersService.cs" />
     <Compile Include="MembershipsService.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="RolesService.cs" />
     <Compile Include="StatusesService.cs" />
     <Compile Include="TypesService.cs" />
+    <Compile Include="UserMembershipsService.cs" />
     <Compile Include="UsersRolesService.cs" />
     <Compile Include="UsersService.cs" />
   </ItemGroup>
