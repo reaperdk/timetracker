@@ -27,6 +27,10 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @if (User.IsInRole("admin")) {
+    <text>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    </text>
+    }
     @Html.ActionLink("Back to List", "Index")
 </p>
