@@ -1,21 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
 
 namespace TimeTracker.Web.Models
 {
     public class UserModel
     {
         public int Id { get; set; }
-        [System.ComponentModel.DataAnnotations.Display(Name = "Login")]
+
+        [Required]
+        [Display(Name = "Login")]
         public string UserName { get; set; }
-        [System.ComponentModel.DataAnnotations.Display(Name = "Role")]
+
+        [Display(Name = "Role")]
         public int RoleId { get; set; }
-        [System.ComponentModel.DataAnnotations.Display(Name = "Role")]
+
+        [Display(Name = "Role")]
         public string RoleName { get; set; }
 
-        public IEnumerable<SelectListItem> Roles { get; set; }
+        public IEnumerable<System.Web.Mvc.SelectListItem> Roles { get; set; }
     }
 }

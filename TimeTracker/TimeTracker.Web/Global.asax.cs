@@ -7,6 +7,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using TimeTracker.Wrapper;
 
 namespace TimeTracker.Web
 {
@@ -28,14 +29,7 @@ namespace TimeTracker.Web
             AuthConfig.RegisterAuth();
 
             MapperConfig.RegisterMapper();
-            DatabaseConfig.InitializeDatabase();
-
-            var dbConfig = new DatabaseConfig();
-            dbConfig.AddRoles();
-            dbConfig.AddCategories();
-            dbConfig.AddStatuses();
-            dbConfig.AddPriorities();
-            dbConfig.AddTypes();
+            DatabaseConfig.RegisterDatabase(new ClassWrapper());
         }
     }
 }

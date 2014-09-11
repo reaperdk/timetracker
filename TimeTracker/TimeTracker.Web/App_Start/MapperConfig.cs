@@ -11,12 +11,12 @@ namespace TimeTracker.Web
     {
         public static void RegisterMapper()
         {
-            Mapper.CreateMap<Model.UserProfile, Web.Models.UserModel>()
+            Mapper.CreateMap<Model.UserModel, Web.Models.UserModel>()
                 .ForMember(dest => dest.Id, opts => opts.MapFrom(src => src.UserId))
                 .ForMember(dest => dest.RoleId, opts => opts.MapFrom(src => src.webpages_Roles.First().RoleId))
                 .ForMember(dest => dest.RoleName, opts => opts.MapFrom(src => src.webpages_Roles.First().RoleName));
 
-            Mapper.CreateMap<Web.Models.UserModel, Model.UserProfile>()
+            Mapper.CreateMap<Web.Models.UserModel, Model.UserModel>()
                 .ForMember(dest => dest.UserId, opts => opts.MapFrom(src => src.Id))
                 .ForMember(
                     dest => dest.webpages_Roles,

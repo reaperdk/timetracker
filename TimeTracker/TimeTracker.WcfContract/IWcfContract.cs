@@ -18,7 +18,7 @@ namespace TimeTracker.WcfContract
     [ServiceKnownType(typeof(Model.StatusModel))]
     [ServiceKnownType(typeof(Model.TaskModel))]
     [ServiceKnownType(typeof(Model.TypeModel))]
-    [ServiceKnownType(typeof(Model.UserProfile))]
+    [ServiceKnownType(typeof(Model.UserModel))]
     [ServiceContract(SessionMode = SessionMode.Allowed)]
     public interface IWcfContract
     {
@@ -52,28 +52,28 @@ namespace TimeTracker.WcfContract
         /// </summary>
         /// <returns>All users</returns>
         [OperationContract]
-        IEnumerable<UserProfile> GetAllUsers();
+        IEnumerable<UserModel> GetAllUsers();
         /// <summary>
         /// Returns user by user's id
         /// </summary>
         /// <param name="id">Id of desired user</param>
         /// <returns>UserProfile if exist, otherwise null</returns>
         [OperationContract]
-        UserProfile GetUserById(int id);
+        UserModel GetUserById(int id);
         /// <summary>
         /// Adds user to database
         /// </summary>
         /// <param name="user">User's profile</param>
         /// <returns>True if user added, otherwise false</returns>
         [OperationContract]
-        bool AddUser(UserProfile user);
+        bool AddUser(UserModel user);
         /// <summary>
         /// Updates user's profile
         /// </summary>
         /// <param name="user">User's profile</param>
         /// <returns>True if updated, otherwise false</returns>
         [OperationContract]
-        bool UpdateUser(UserProfile user);
+        bool UpdateUser(UserModel user);
         /// <summary>
         /// Removes user by id
         /// </summary>

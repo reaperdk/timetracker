@@ -29,6 +29,7 @@
 </fieldset>
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.UserName)
     <p>
         <input type="submit" value="Delete" /> |
         @Html.ActionLink("Back to List", "Index")

@@ -19,22 +19,22 @@ namespace TimeTracker.Wrapper
         {
             
         }
-        public IEnumerable<Model.UserProfile> GetAllUsers()
+        public IEnumerable<Model.UserModel> GetAllUsers()
         {
             throw new NotImplementedException();
         }
 
-        public Model.UserProfile GetUserById(int id)
+        public Model.UserModel GetUserById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void CreateUser(Model.UserProfile user)
+        public void CreateUser(Model.UserModel user)
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateUser(Model.UserProfile user)
+        public void UpdateUser(Model.UserModel user)
         {
             throw new NotImplementedException();
         }

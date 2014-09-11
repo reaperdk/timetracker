@@ -5,6 +5,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TimeTracker.Wrapper;
+using WebMatrix.WebData;
+using TimeTracker.Web.Services;
+using System.Web.Security;
 
 namespace TimeTracker.Web.Controllers
 {
@@ -48,9 +51,12 @@ namespace TimeTracker.Web.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Web.Models.UserModel model)
         {
-            _wrapper.AddUser(Mapper.Map<Model.UserProfile>(model));
+            string salt = WebSecurityService.GetSalt();
+            WebSecurity.CreateUserAndAccount(model.UserName, model.UserName + "_Tt" + salt);
+            _wrapper.UpdateCreatedUser(Mapper.Map<Model.UserModel>(model), salt);
             return RedirectToAction("Index");
         }
 
@@ -65,7 +71,7 @@ namespace TimeTracker.Web.Controllers
         public ActionResult Edit(int id, Web.Models.UserModel model)
         {
             _wrapper.UpdateUser(
-                Mapper.Map<Model.UserProfile>(Mapper.Map<Model.UserProfile>(model))
+                Mapper.Map<Model.UserModel>(Mapper.Map<Model.UserModel>(model))
             );
             return RedirectToAction("Index");
         }
@@ -80,7 +86,8 @@ namespace TimeTracker.Web.Controllers
         [HttpPost]
         public ActionResult Delete(Web.Models.UserModel user)
         {
-            _wrapper.RemoveUser(user.Id);
+            ((SimpleMembershipProvider)Membership.Provider).DeleteAccount(user.UserName);
+            ((SimpleMembershipProvider)Membership.Provider).DeleteUser(user.UserName, true);
             return RedirectToAction("Index");
         }
     }

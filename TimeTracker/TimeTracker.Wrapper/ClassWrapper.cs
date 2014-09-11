@@ -11,6 +11,7 @@ namespace TimeTracker.Wrapper
     public class ClassWrapper : IServiceWrapper
     {
         private readonly IUsersService _usersService;
+        private readonly IMembershipsService _membershipsService;
         private readonly IRolesService _rolesService;
         private readonly IUsersRolesService _usersRolesService;
         private readonly ICategoriesService _categoriesService;
@@ -20,15 +21,17 @@ namespace TimeTracker.Wrapper
 
         public ClassWrapper()
         {
-            _usersService = new ClassService.UsersService();
-            _rolesService = new ClassService.RolesService();
-            _usersRolesService = new ClassService.UsersRolesService();
-            _categoriesService = new ClassService.CategoriesService();
-            _statusesService = new ClassService.StatusesService();
-            _prioritiesService = new ClassService.PrioritiesService();
-            _typesService = new ClassService.TypesService();
+            _usersService = new UsersService();
+            _membershipsService = new MembershipsService();
+            _rolesService = new RolesService();
+            _usersRolesService = new UsersRolesService();
+            _categoriesService = new CategoriesService();
+            _statusesService = new StatusesService();
+            _prioritiesService = new PrioritiesService();
+            _typesService = new TypesService();
         }
-        public ClassWrapper(IUsersService usersService, IRolesService rolesService, ICategoriesService categoriesService, IStatusesService statusesService, IPrioritiesService prioritiesService, ITypesService typesService)
+        public ClassWrapper(IUsersService usersService, IRolesService rolesService, ICategoriesService categoriesService,
+            IStatusesService statusesService, IPrioritiesService prioritiesService, ITypesService typesService)
         {
             _usersService = usersService;
             _rolesService = rolesService;
@@ -38,7 +41,7 @@ namespace TimeTracker.Wrapper
             _typesService = typesService;
         }
 
-        public static void InitializeDatabase()
+        public void InitializeDatabase()
         {
             DatabaseInitializer.InitializeDatabase();
         }
@@ -68,34 +71,29 @@ namespace TimeTracker.Wrapper
             _typesService.InitializeTypes();
         }
 
-        public IEnumerable<UserProfile> GetAllUsers()
+        public IEnumerable<UserModel> GetAllUsers()
         {
             return _usersService.GetAll();
         }
 
-        public UserProfile GetUserById(int id)
+        public UserModel GetUserById(int id)
         {
             return _usersService.GetById(id);
         }
 
-        public bool AddUser(UserProfile user)
+        public bool UpdateCreatedUser(UserModel user, string salt)
         {
-            _usersService.Add(user);
-            //TODO: return user add result
+            user.UserId = _usersService.GetUserByUserName(user.UserName).UserId;
+            _usersService.UpdateCreated(user);
+            _membershipsService.SetSalt(user.UserId, salt);
+            //TODO: return user add result // no wlasnie, zrob to Andrzej :)
             return true;
         }
 
-        public bool UpdateUser(UserProfile user)
+        public bool UpdateUser(UserModel user)
         {
             _usersService.Update(user);
-            //TODO: return user update result
-            return true;
-        }
-        
-        public bool RemoveUser(int id)
-        {
-            _usersService.Remove(id);
-            //TODO: return user remove result
+            //TODO: return user update result // no wlasnie, zrob to Andrzej ;)
             return true;
         }
 

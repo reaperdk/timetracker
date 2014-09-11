@@ -9,16 +9,16 @@ namespace TimeTracker.Wrapper
 {
     public interface IServiceWrapper
     {
+        void InitializeDatabase();
         void InitializeRoles();
         void InitializeCategories();
         void InitializeStatuses();
         void InitializePriorities();
         void InitializeTypes();
-        IEnumerable<UserProfile> GetAllUsers();
-        UserProfile GetUserById(int id);
-        bool AddUser(UserProfile user);
-        bool UpdateUser(UserProfile user);
-        bool RemoveUser(int id);
+        IEnumerable<UserModel> GetAllUsers();
+        UserModel GetUserById(int id);
+        bool UpdateCreatedUser(UserModel user, string salt);
+        bool UpdateUser(UserModel user);
         IEnumerable<RoleModel> GetAllRoles();
         RoleModel GetRoleById(int id);
         IEnumerable<CategoryModel> GetAllCategories();

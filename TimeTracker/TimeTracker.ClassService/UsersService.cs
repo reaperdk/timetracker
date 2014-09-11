@@ -10,19 +10,19 @@ namespace TimeTracker.ClassService
 {
     public class UsersService : IUsersService
     {
-        private IEntitiesRepository<UserProfile> _repository;
-        private readonly Func<IEntitiesRepository<UserProfile>> _getRepository;
+        private IEntitiesRepository<UserModel> _repository;
+        private readonly Func<IEntitiesRepository<UserModel>> _getRepository;
 
         public UsersService()
         {
-            _getRepository = () => new EntitiesRepository<UserProfile>();
+            _getRepository = () => new EntitiesRepository<UserModel>();
         }
-        public UsersService(Func<IEntitiesRepository<UserProfile>> getRepository)
+        public UsersService(Func<IEntitiesRepository<UserModel>> getRepository)
         {
             _getRepository = getRepository;
         }
 
-        public IEnumerable<UserProfile> GetAll()
+        public IEnumerable<UserModel> GetAll()
         {
             using (_repository = _getRepository())
             {
@@ -30,7 +30,7 @@ namespace TimeTracker.ClassService
             }
         }
 
-        public UserProfile GetById(int id)
+        public UserModel GetById(int id)
         {
             using (_repository = _getRepository())
             {
@@ -38,41 +38,41 @@ namespace TimeTracker.ClassService
             }
         }
 
-        public void Add(UserProfile user)
+        public UserModel GetUserByUserName(string userName)
         {
             using (_repository = _getRepository())
             {
+                return _repository.Get(item => item.UserName.Equals(userName), item => item.webpages_Roles).First();
+            }
+        }
+
+        public void UpdateCreated(UserModel user)
+        {
+            using (_repository = _getRepository())
+            {
+                UserModel toUpdate = _repository.Get(item => item.UserName.Equals(user.UserName)).First();
                 int roleId = user.webpages_Roles.First().RoleId;
-                user.webpages_Roles =
-                    new []
+                toUpdate.webpages_Roles = new []
                     {
                         _repository.GetAnother<Model.RoleModel>(item => item.RoleId == roleId).First()
                     };
-                _repository.Insert(user);
+                _repository.Update(toUpdate);
                 _repository.Save();
             }
         }
 
-        public void Update(UserProfile user)
+        public void Update(UserModel user)
         {
             using (_repository = _getRepository())
             {
-                UserProfile toUpdate = _repository.Get(item => item.UserId == user.UserId, item => item.webpages_Roles).First();
+                UserModel toUpdate = _repository.Get(item => item.UserId == user.UserId, item => item.webpages_Roles).First();
+                toUpdate.UserName = user.UserName;
                 int roleId = user.webpages_Roles.First().RoleId;
                 toUpdate.webpages_Roles.Clear();
                 toUpdate.webpages_Roles.Add(
                     _repository.GetAnother<Model.RoleModel>(item => item.RoleId == roleId).First()
                 );
                 _repository.Update(toUpdate);
-                _repository.Save();
-            }
-        }
-
-        public void Remove(int id)
-        {
-            using (_repository = _getRepository())
-            {
-                _repository.Remove(id);
                 _repository.Save();
             }
         }

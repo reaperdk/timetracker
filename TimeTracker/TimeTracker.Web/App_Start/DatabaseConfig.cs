@@ -3,51 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using TimeTracker.Wrapper;
+using WebMatrix.WebData;
 
 namespace TimeTracker.Web
 {
     public class DatabaseConfig
     {
-        private readonly IServiceWrapper _wrapper;
-
-        public DatabaseConfig()
+        public static void RegisterDatabase(IServiceWrapper wrapper)
         {
-            _wrapper = new ClassWrapper();
-        }
-
-        public DatabaseConfig(IServiceWrapper wrapper)
-        {
-            _wrapper = wrapper;
-        }
-
-        public static void InitializeDatabase()
-        {
-            ClassWrapper.InitializeDatabase();
-        }
-
-        public void AddRoles()
-        {
-            _wrapper.InitializeRoles();
-        }
-
-        public void AddCategories()
-        {
-            _wrapper.InitializeCategories();
-        }
-
-        public void AddStatuses()
-        {
-            _wrapper.InitializeStatuses();
-        }
-
-        public void AddPriorities()
-        {
-            _wrapper.InitializePriorities();
-        }
-
-        public void AddTypes()
-        {
-            _wrapper.InitializeTypes();
+            wrapper.InitializeDatabase();
+            wrapper.InitializeRoles();
+            wrapper.InitializeCategories();
+            wrapper.InitializeStatuses();
+            wrapper.InitializePriorities();
+            wrapper.InitializeTypes();
+            WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfiles", "UserId", "UserName", autoCreateTables: false);
         }
     }
 }

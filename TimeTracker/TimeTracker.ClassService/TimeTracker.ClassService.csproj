@@ -42,12 +42,14 @@
     <Compile Include="CategoriesService.cs" />
     <Compile Include="DatabaseInitializer.cs" />
     <Compile Include="ICategoriesService.cs" />
+    <Compile Include="IMembershipsService.cs" />
     <Compile Include="IPrioritiesService.cs" />
     <Compile Include="IRolesService.cs" />
     <Compile Include="IStatusesService.cs" />
     <Compile Include="ITypesService.cs" />
     <Compile Include="IUsersRolesService.cs" />
     <Compile Include="IUsersService.cs" />
+    <Compile Include="MembershipsService.cs" />
     <Compile Include="PrioritiesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RolesService.cs" />

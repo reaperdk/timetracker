@@ -41,14 +41,14 @@ namespace TimeTracker.Wcf
             _statusesService = statusesService;
 	    }
 
-        public IEnumerable<UserProfile> GetAllUsers()
+        public IEnumerable<UserModel> GetAllUsers()
         {
             return _usersService.GetAll();
         }
 
-        public bool AddUser(UserProfile user)
+        public bool AddUser(UserModel user)
         {
-            _usersService.Add(user);
+            //_usersService.Add(user);
             //TODO: _usersService.Add should return value if function finished succesfully. Now it is void
             return true;
         }
@@ -103,7 +103,7 @@ namespace TimeTracker.Wcf
             return _typesService.Get(id);
         }
 
-        public UserProfile GetUserById(int id)
+        public UserModel GetUserById(int id)
         {
             return _usersService.GetById(id);
         }
@@ -135,12 +135,12 @@ namespace TimeTracker.Wcf
 
         public bool RemoveUser(int id)
         {
-            _usersService.Remove(id);
+            //_usersService.Remove(id);
             //TODO: _usersService.Remove should return boolean answer
             return true;
         }
 
-        public bool UpdateUser(UserProfile user)
+        public bool UpdateUser(UserModel user)
         {
             _usersService.Update(user);
             //TODO: _usersService.Update should return boolean answer

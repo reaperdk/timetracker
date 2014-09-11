@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TimeTracker.Model
 {
-    [Table("Catygories")]
+    [Table("Categories")]
     public class CategoryModel
     {
         public int Id { get; set; }

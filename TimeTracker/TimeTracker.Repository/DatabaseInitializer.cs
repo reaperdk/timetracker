@@ -22,8 +22,6 @@ namespace TimeTracker.Repository
                     ((IObjectContextAdapter)context).ObjectContext.CreateDatabase();
                 }
             }
-
-            //WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
         }
     }
 }

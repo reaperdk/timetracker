@@ -15,7 +15,7 @@ namespace TimeTracker.Repository
         {
         }
 
-        public virtual IDbSet<UserProfile> UserProfiles { get; set; }
+        public virtual IDbSet<UserModel> UserProfiles { get; set; }
         public virtual IDbSet<MembershipModel> Memberships { get; set; }
         //public virtual IDbSet<OAuthMembershipModel> OAuthMemberships { get; set; }
         public virtual IDbSet<RoleModel> Roles { get; set; }

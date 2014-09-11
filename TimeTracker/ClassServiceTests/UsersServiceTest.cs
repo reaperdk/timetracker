@@ -13,21 +13,21 @@ namespace ClassServiceTests
     [TestFixture]
     public class UsersServiceTest
     {
-        IQueryable<UserProfile> _userProfilesWithRoles;
-        IQueryable<UserProfile> _userProfilesWitouthRoles;
+        IQueryable<UserModel> _userProfilesWithRoles;
+        IQueryable<UserModel> _userProfilesWitouthRoles;
 
         [TestFixtureSetUp]
         public void StartUp()
         {
             _userProfilesWithRoles = new [] 
             {
-                new UserProfile { UserId = 1 },
-                new UserProfile { UserId = 2 }
+                new UserModel { UserId = 1 },
+                new UserModel { UserId = 2 }
             }.AsQueryable();
 
             _userProfilesWitouthRoles = new[] 
             {
-                new UserProfile 
+                new UserModel 
                 { 
                     UserId = 1,  
                     webpages_Roles = new [] 
@@ -35,7 +35,7 @@ namespace ClassServiceTests
                         new RoleModel { RoleId = 1 }
                     }
                 },
-                new UserProfile
+                new UserModel
                 { 
                     UserId = 2,  
                     webpages_Roles = new [] 
@@ -49,10 +49,10 @@ namespace ClassServiceTests
         [Test]
         public void IsReturningUserByIdIfUserExist()
         {
-            var mock = Substitute.For<IEntitiesRepository<UserProfile>>();
-            mock.Get(It.IsAny<Expression<Func<UserProfile, RoleModel>>>()).Returns(_userProfilesWithRoles);
+            var mock = Substitute.For<IEntitiesRepository<UserModel>>();
+            mock.Get(It.IsAny<Expression<Func<UserModel, RoleModel>>>()).Returns(_userProfilesWithRoles);
 
-            Func<IEntitiesRepository<UserProfile>> getFakeRepository = () => mock;
+            Func<IEntitiesRepository<UserModel>> getFakeRepository = () => mock;
             //Subject of Unit Test
             var sut = new UsersService(getFakeRepository);
 

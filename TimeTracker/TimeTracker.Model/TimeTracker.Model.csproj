@@ -48,10 +48,10 @@
     <Compile Include="StatusModel.cs" />
     <Compile Include="TaskModel.cs" />
     <Compile Include="TypeModel.cs" />
-    <Compile Include="UserProfile.cs" />
-    <Compile Include="webpages_Membership.cs" />
-    <Compile Include="webpages_OAuthMembership.cs" />
-    <Compile Include="webpages_Roles.cs" />
+    <Compile Include="UserModel.cs" />
+    <Compile Include="MembershipModel.cs" />
+    <Compile Include="OAuthMembershipModel.cs" />
+    <Compile Include="RoleModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
