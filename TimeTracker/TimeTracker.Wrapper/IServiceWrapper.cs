@@ -18,6 +18,7 @@ namespace TimeTracker.Wrapper
         IEnumerable<UserModel> GetAllUsers();
         UserModel GetUserById(int id);
         string GetSaltByUserName(string userName);
+        void SetSalt(string userName, string salt);
         bool UpdateCreatedUser(UserModel user, string salt);
         bool UpdateUser(UserModel user);
         IEnumerable<RoleModel> GetAllRoles();

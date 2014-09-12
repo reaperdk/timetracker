@@ -83,6 +83,11 @@ namespace TimeTracker.Wrapper
             return _usersService.GetById(id);
         }
 
+        public void SetSalt(string userName, string salt)
+        {
+            _membershipsService.SetSalt(_usersService.GetUserByUserName(userName).UserId, salt);
+        }
+
         public string GetSaltByUserName(string userName)
         {
             return _userMembershipsService.GetSaltByUserName(userName);

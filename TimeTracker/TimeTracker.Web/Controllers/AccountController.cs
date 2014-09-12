@@ -38,10 +38,13 @@ namespace TimeTracker.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginModel model, string returnUrl)
         {
-            string salt = _wrapper.GetSaltByUserName(model.UserName);
-            if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password + salt, persistCookie: model.RememberMe))
+            if (WebSecurity.UserExists(model.UserName))
             {
-                return RedirectToLocal(returnUrl);
+                string salt = _wrapper.GetSaltByUserName(model.UserName);
+                if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password + salt, persistCookie: model.RememberMe))
+                {
+                    return RedirectToLocal(returnUrl);
+                }
             }
 
             // If we got this far, something failed, redisplay form
@@ -159,7 +162,9 @@ namespace TimeTracker.Web.Controllers
                     bool changePasswordSucceeded;
                     try
                     {
-                        changePasswordSucceeded = WebSecurity.ChangePassword(User.Identity.Name, model.OldPassword, model.NewPassword);
+                        string salt = _wrapper.GetSaltByUserName(User.Identity.Name);
+                        changePasswordSucceeded = WebSecurity.ChangePassword(User.Identity.Name, model.OldPassword + salt, model.NewPassword + salt);
+                        _wrapper.SetSalt(User.Identity.Name, salt);
                     }
                     catch (Exception)
                     {

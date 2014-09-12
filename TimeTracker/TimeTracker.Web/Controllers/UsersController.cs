@@ -30,7 +30,7 @@ namespace TimeTracker.Web.Controllers
             return View(
                 _wrapper.GetAllUsers().Select(
                     item => Mapper.Map<Web.Models.UserModel>(item)
-                )
+                ).Where(item => !item.UserName.Equals(User.Identity.Name))
             );
         }
 
