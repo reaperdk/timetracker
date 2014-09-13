@@ -12,19 +12,8 @@ using System.Web.Security;
 namespace TimeTracker.Web.Controllers
 {
     [Authorize]
-    public class UsersController : Controller
+    public class UsersController : BaseController
     {
-        private readonly IServiceWrapper _wrapper;
-
-        public UsersController()
-        {
-            _wrapper = new ClassWrapper();
-        }
-        public UsersController(IServiceWrapper usersWrapper)
-        {
-            _wrapper = usersWrapper;
-        }
-
         public ActionResult Index()
         {
             return View(

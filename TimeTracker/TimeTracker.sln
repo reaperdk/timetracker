@@ -17,8 +17,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.Wrapper", "Time
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.ClassService", "TimeTracker.ClassService\TimeTracker.ClassService.csproj", "{ECC8EE94-72BF-4BD4-830C-9504D41B36C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.WebApi", "TimeTracker.WebApi\TimeTracker.WebApi.csproj", "{1D2D59C7-0E3F-4CC2-AB33-D7BCC76BA4A2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.Web", "TimeTracker.Web\TimeTracker.Web.csproj", "{CA9C63E2-4442-42F7-AAF3-DEC1645C7032}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.Model", "TimeTracker.Model\TimeTracker.Model.csproj", "{A139D99E-95F4-4813-9902-0E9066AF52D6}"
@@ -51,6 +49,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Balsamiq Mockups", "Balsami
 		..\Balsamiq Mockups\Tasks.bmml = ..\Balsamiq Mockups\Tasks.bmml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.WebApi", "TimeTracker.WebApi\TimeTracker.WebApi.csproj", "{9B11F7AB-FE74-438F-93AC-AA68AEBE266F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,10 +81,6 @@ Global
 		{ECC8EE94-72BF-4BD4-830C-9504D41B36C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECC8EE94-72BF-4BD4-830C-9504D41B36C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECC8EE94-72BF-4BD4-830C-9504D41B36C6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1D2D59C7-0E3F-4CC2-AB33-D7BCC76BA4A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1D2D59C7-0E3F-4CC2-AB33-D7BCC76BA4A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1D2D59C7-0E3F-4CC2-AB33-D7BCC76BA4A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1D2D59C7-0E3F-4CC2-AB33-D7BCC76BA4A2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CA9C63E2-4442-42F7-AAF3-DEC1645C7032}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CA9C63E2-4442-42F7-AAF3-DEC1645C7032}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA9C63E2-4442-42F7-AAF3-DEC1645C7032}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -105,6 +101,10 @@ Global
 		{CAEDE7D1-4F13-4EED-9F6A-4161C5D383E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAEDE7D1-4F13-4EED-9F6A-4161C5D383E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAEDE7D1-4F13-4EED-9F6A-4161C5D383E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B11F7AB-FE74-438F-93AC-AA68AEBE266F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B11F7AB-FE74-438F-93AC-AA68AEBE266F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B11F7AB-FE74-438F-93AC-AA68AEBE266F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B11F7AB-FE74-438F-93AC-AA68AEBE266F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

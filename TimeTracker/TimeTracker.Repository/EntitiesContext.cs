@@ -13,11 +13,12 @@ namespace TimeTracker.Repository
         public EntitiesContext()
             : base("name=DefaultConnection")
         {
+            Configuration.LazyLoadingEnabled = false;
+            Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual IDbSet<UserModel> UserProfiles { get; set; }
         public virtual IDbSet<MembershipModel> Memberships { get; set; }
-        //public virtual IDbSet<OAuthMembershipModel> OAuthMemberships { get; set; }
         public virtual IDbSet<RoleModel> Roles { get; set; }
 
         public virtual IDbSet<ProjectModel> Projects { get; set; }

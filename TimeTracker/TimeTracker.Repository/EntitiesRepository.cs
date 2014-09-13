@@ -16,6 +16,7 @@ namespace TimeTracker.Repository
         public EntitiesRepository()
         {
             _context = new EntitiesContext();
+            _context.Database.Connection.Open();
             _disposed = false;
         }
 
