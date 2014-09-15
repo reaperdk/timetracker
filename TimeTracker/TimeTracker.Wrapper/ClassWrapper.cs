@@ -11,6 +11,7 @@ namespace TimeTracker.Wrapper
     public class ClassWrapper : IServiceWrapper
     {
         private readonly IUsersService _usersService;
+        private readonly IProjectsService _projectsService;
         private readonly IMembershipsService _membershipsService;
         private readonly IUserMembershipsService _userMembershipsService;
         private readonly IRolesService _rolesService;
@@ -23,6 +24,7 @@ namespace TimeTracker.Wrapper
         public ClassWrapper()
         {
             _usersService = new UsersService();
+            _projectsService = new ProjectsService();
             _membershipsService = new MembershipsService();
             _userMembershipsService = new UserMembershipsService();
             _rolesService = new RolesService();
@@ -32,10 +34,11 @@ namespace TimeTracker.Wrapper
             _prioritiesService = new PrioritiesService();
             _typesService = new TypesService();
         }
-        public ClassWrapper(IUsersService usersService, IRolesService rolesService, ICategoriesService categoriesService,
+        public ClassWrapper(IUsersService usersService, IProjectsService projectsService, IRolesService rolesService, ICategoriesService categoriesService,
             IStatusesService statusesService, IPrioritiesService prioritiesService, ITypesService typesService)
         {
             _usersService = usersService;
+            _projectsService = projectsService;
             _rolesService = rolesService;
             _categoriesService = categoriesService;
             _statusesService = statusesService;
@@ -106,6 +109,37 @@ namespace TimeTracker.Wrapper
         {
             _usersService.Update(user);
             //TODO: return user update result // no wlasnie, zrob to Andrzej ;)
+            return true;
+        }
+
+        public IEnumerable<ProjectModel> GetAllProjects()
+        {
+            return _projectsService.GetAll();
+        }
+
+        public ProjectModel GetProjectById(int id)
+        {
+            return _projectsService.GetById(id);
+        }
+
+        public bool CreateProject(ProjectModel project)
+        {
+            _projectsService.Create(project);
+            //TODO: return  result
+            return true;
+        }
+
+        public bool UpdateProject(ProjectModel project)
+        {
+            _projectsService.Update(project);
+            //TODO: return  result
+            return true;
+        }
+
+        public bool DeleteProject(int id)
+        {
+            _projectsService.Delete(id);
+            //TODO: return  result
             return true;
         }
 

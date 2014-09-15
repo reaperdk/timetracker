@@ -22,6 +22,12 @@ namespace TimeTracker.Web
                     dest => dest.webpages_Roles,
                     opts => opts.MapFrom(src => new [] { new Model.RoleModel { RoleId = src.RoleId } })
                 );
+
+            Mapper.CreateMap<Model.ProjectModel, Web.Models.ProjectModel>()
+                .ForMember(dest => dest.Id, opts => opts.MapFrom(src => src.Id));
+
+            Mapper.CreateMap<Web.Models.ProjectModel, Model.ProjectModel>()
+                .ForMember(dest => dest.Id, opts => opts.MapFrom(src => src.Id));
         }
     }
 }
