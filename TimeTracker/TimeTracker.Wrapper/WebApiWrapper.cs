@@ -80,6 +80,31 @@ namespace TimeTracker.Wrapper
             throw new NotImplementedException();
         }
 
+        public IEnumerable<ProjectModel> GetAllProjects()
+        {
+            throw new NotImplementedException();
+        }
+
+        public ProjectModel GetProjectById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool CreateProject(ProjectModel project)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateProject(ProjectModel project)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool DeleteProject(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<RoleModel> GetAllRoles()
         {
             return RequestGet<RoleModel[]>("Roles/");
