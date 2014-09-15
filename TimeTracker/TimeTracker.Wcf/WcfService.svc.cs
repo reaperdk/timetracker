@@ -90,7 +90,7 @@ namespace TimeTracker.Wcf
 
         public RoleModel GetRoleById(int id)
         {
-            return _rolesService.Get(id);
+            return _rolesService.GetById(id);
         }
 
         public StatusModel GetStatusById(int id)

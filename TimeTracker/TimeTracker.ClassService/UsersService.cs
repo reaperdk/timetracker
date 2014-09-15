@@ -38,7 +38,7 @@ namespace TimeTracker.ClassService
             }
         }
 
-        public UserModel GetUserByUserName(string userName)
+        public UserModel GetByUserName(string userName)
         {
             using (_repository = _getRepository())
             {

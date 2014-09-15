@@ -14,6 +14,7 @@ namespace TimeTracker.Web.Controllers
         public BaseController()
         {
             _wrapper = new ClassWrapper();
+            //_wrapper = new WebApiWrapper();
         }
         public BaseController(IServiceWrapper usersWrapper)
         {

@@ -34,6 +34,12 @@ namespace TimeTracker.WebApi.Controllers
             return JsonNonCyclic(_service.GetById(id));
         }
 
+        [HttpGet]
+        public IHttpActionResult GetByUserName(string userName)
+        {
+            return JsonNonCyclic(_service.GetByUserName(userName));
+        }
+
         [HttpPut]
         public HttpResponseMessage Put([FromBody]UserModel value)
         {

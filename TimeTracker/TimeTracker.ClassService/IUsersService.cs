@@ -11,7 +11,7 @@ namespace TimeTracker.ClassService
     {
         IEnumerable<UserModel> GetAll();
         UserModel GetById(int id);
-        UserModel GetUserByUserName(string userName);
+        UserModel GetByUserName(string userName);
         void UpdateCreated(UserModel user);
         void Update(UserModel user);
     }

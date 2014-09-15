@@ -43,7 +43,7 @@ namespace TimeTracker.ClassService
             }
         }
 
-        public RoleModel Get(int id)
+        public RoleModel GetById(int id)
         {
             using (_repository = _getRepository())
             {

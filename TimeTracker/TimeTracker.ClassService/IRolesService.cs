@@ -11,6 +11,6 @@ namespace TimeTracker.ClassService
     {
         void InitializeRoles();
         IEnumerable<RoleModel> GetAll();
-        RoleModel Get(int id);
+        RoleModel GetById(int id);
     }
 }

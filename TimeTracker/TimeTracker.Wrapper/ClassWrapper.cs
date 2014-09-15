@@ -85,7 +85,7 @@ namespace TimeTracker.Wrapper
 
         public void SetSalt(string userName, string salt)
         {
-            _membershipsService.SetSalt(_usersService.GetUserByUserName(userName).UserId, salt);
+            _membershipsService.SetSalt(_usersService.GetByUserName(userName).UserId, salt);
         }
 
         public string GetSaltByUserName(string userName)
@@ -95,7 +95,7 @@ namespace TimeTracker.Wrapper
 
         public bool UpdateCreatedUser(UserModel user, string salt)
         {
-            user.UserId = _usersService.GetUserByUserName(user.UserName).UserId;
+            user.UserId = _usersService.GetByUserName(user.UserName).UserId;
             _usersService.UpdateCreated(user);
             _membershipsService.SetSalt(user.UserId, salt);
             //TODO: return user add result // no wlasnie, zrob to Andrzej :)
@@ -116,7 +116,7 @@ namespace TimeTracker.Wrapper
 
         public RoleModel GetRoleById(int id)
         {
-            return _rolesService.Get(id);
+            return _rolesService.GetById(id);
         }
 
         public IEnumerable<CategoryModel> GetAllCategories()
