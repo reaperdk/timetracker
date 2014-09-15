@@ -15,12 +15,20 @@ namespace TimeTracker.Wrapper
         void InitializeStatuses();
         void InitializePriorities();
         void InitializeTypes();
+
         IEnumerable<UserModel> GetAllUsers();
         UserModel GetUserById(int id);
         string GetSaltByUserName(string userName);
         void SetSalt(string userName, string salt);
         bool UpdateCreatedUser(UserModel user, string salt);
         bool UpdateUser(UserModel user);
+
+        IEnumerable<ProjectModel> GetAllProjects();
+        ProjectModel GetProjectById(int id);
+        bool CreateProject(ProjectModel project);
+        bool UpdateProject(ProjectModel project);
+        bool DeleteProject(int id);
+
         IEnumerable<RoleModel> GetAllRoles();
         RoleModel GetRoleById(int id);
         IEnumerable<CategoryModel> GetAllCategories();
@@ -31,5 +39,6 @@ namespace TimeTracker.Wrapper
         PriorityModel GetPriorityById(int id);
         IEnumerable<TypeModel> GetAllTypes();
         TypeModel GetTypeById(int id);
+
     }
 }
