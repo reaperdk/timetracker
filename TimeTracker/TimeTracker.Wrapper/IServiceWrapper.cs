@@ -29,6 +29,12 @@ namespace TimeTracker.Wrapper
         bool UpdateProject(ProjectModel project);
         bool DeleteProject(int id);
 
+        IEnumerable<TaskModel> GetAllTasks();
+        TaskModel GetTaskById(int id);
+        bool CreateTask(TaskModel task);
+        bool UpdateTask(TaskModel task);
+        bool DeleteTask(int id);
+
         IEnumerable<RoleModel> GetAllRoles();
         RoleModel GetRoleById(int id);
         IEnumerable<CategoryModel> GetAllCategories();
@@ -39,6 +45,5 @@ namespace TimeTracker.Wrapper
         PriorityModel GetPriorityById(int id);
         IEnumerable<TypeModel> GetAllTypes();
         TypeModel GetTypeById(int id);
-
     }
 }

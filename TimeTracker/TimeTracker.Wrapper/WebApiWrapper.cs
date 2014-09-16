@@ -105,6 +105,31 @@ namespace TimeTracker.Wrapper
             throw new NotImplementedException();
         }
 
+        public IEnumerable<TaskModel> GetAllTasks()
+        {
+            throw new NotImplementedException();
+        }
+
+        public TaskModel GetTaskById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool CreateTask(TaskModel task)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateTask(TaskModel task)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool DeleteTask(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<RoleModel> GetAllRoles()
         {
             return RequestGet<RoleModel[]>("Roles/");

@@ -1,0 +1,163 @@
+﻿@model TimeTracker.Web.Models.TaskModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TaskModel</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TimeEstimate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TimeEstimate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.StartDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StartDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FinishDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FinishDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Filepath)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Filepath)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Version)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Version)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ProjectId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProjectId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ProjectName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProjectName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AssignedPersonId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AssignedPersonId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AssignedPersonName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AssignedPersonName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AssigningPersonId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AssigningPersonId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AssigningPersonName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AssigningPersonName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CategoryId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CategoryId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CategoryName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CategoryName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.StatusId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StatusId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.StatusName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StatusName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PriorityId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PriorityId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PriorityName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PriorityName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TypeId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TypeId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TypeName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TypeName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

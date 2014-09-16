@@ -12,6 +12,7 @@ namespace TimeTracker.Wrapper
     {
         private readonly IUsersService _usersService;
         private readonly IProjectsService _projectsService;
+        private readonly ITasksService _tasksService;
         private readonly IMembershipsService _membershipsService;
         private readonly IUserMembershipsService _userMembershipsService;
         private readonly IRolesService _rolesService;
@@ -25,6 +26,7 @@ namespace TimeTracker.Wrapper
         {
             _usersService = new UsersService();
             _projectsService = new ProjectsService();
+            _tasksService = new TasksService();
             _membershipsService = new MembershipsService();
             _userMembershipsService = new UserMembershipsService();
             _rolesService = new RolesService();
@@ -34,11 +36,12 @@ namespace TimeTracker.Wrapper
             _prioritiesService = new PrioritiesService();
             _typesService = new TypesService();
         }
-        public ClassWrapper(IUsersService usersService, IProjectsService projectsService, IRolesService rolesService, ICategoriesService categoriesService,
-            IStatusesService statusesService, IPrioritiesService prioritiesService, ITypesService typesService)
+        public ClassWrapper(IUsersService usersService, IProjectsService projectsService, ITasksService tasksService, IRolesService rolesService, 
+            ICategoriesService categoriesService, IStatusesService statusesService, IPrioritiesService prioritiesService, ITypesService typesService)
         {
             _usersService = usersService;
             _projectsService = projectsService;
+            _tasksService = tasksService;
             _rolesService = rolesService;
             _categoriesService = categoriesService;
             _statusesService = statusesService;
@@ -139,6 +142,37 @@ namespace TimeTracker.Wrapper
         public bool DeleteProject(int id)
         {
             _projectsService.Delete(id);
+            //TODO: return  result
+            return true;
+        }
+
+        public IEnumerable<TaskModel> GetAllTasks()
+        {
+            return _tasksService.GetAll();
+        }
+
+        public TaskModel GetTaskById(int id)
+        {
+            return _tasksService.GetById(id);
+        }
+
+        public bool CreateTask(TaskModel task)
+        {
+            _tasksService.Create(task);
+            //TODO: return  result
+            return true;
+        }
+
+        public bool UpdateTask(TaskModel task)
+        {
+            _tasksService.Update(task);
+            //TODO: return  result
+            return true;
+        }
+
+        public bool DeleteTask(int id)
+        {
+            _tasksService.Delete(id);
             //TODO: return  result
             return true;
         }
