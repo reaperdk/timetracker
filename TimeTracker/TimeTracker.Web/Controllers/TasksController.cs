@@ -23,88 +23,67 @@ namespace TimeTracker.Web.Controllers
         public ActionResult Details(int id)
         {
             return View(
-                _wrapper.GetAllTasks().Select(
-                    item => Mapper.Map<Web.Models.TaskModel>(item)
-                ) 
+                Mapper.Map<Web.Models.TaskModel>(_wrapper.GetTaskById(id))
             );
         }
 
-        //
-        // GET: /Tasks/Create
-
         public ActionResult Create()
         {
-            return View();
+            return View(
+                new Web.Models.TaskModel
+                {
+                    Projects = new SelectList(_wrapper.GetAllProjects(), "Id", "Name"),
+                    AssignedPersons = new SelectList(_wrapper.GetAllUsers(), "UserId", "UserName"),
+                    AssigningPersons = new SelectList(_wrapper.GetAllUsers(), "UserId", "UserName"),
+                    Categories = new SelectList(_wrapper.GetAllCategories(), "Id", "Name"),
+                    Statuses = new SelectList(_wrapper.GetAllStatuses(), "Id", "Name"),
+                    Priorities = new SelectList(_wrapper.GetAllPriorities(), "Id", "Name"),
+                    Types = new SelectList(_wrapper.GetAllTypes(), "Id", "Name")
+                }
+            );
         }
-
-        //
-        // POST: /Tasks/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Web.Models.TaskModel model)
         {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            _wrapper.CreateTask(Mapper.Map<Model.TaskModel>(model));
+            return RedirectToAction("Index");
         }
-
-        //
-        // GET: /Tasks/Edit/5
 
         public ActionResult Edit(int id)
         {
-            return View();
+            Web.Models.TaskModel model = Mapper.Map<Web.Models.TaskModel>(_wrapper.GetTaskById(id));
+            model.Projects = new SelectList(_wrapper.GetAllProjects(), "Id", "Name");
+            model.AssignedPersons = new SelectList(_wrapper.GetAllUsers(), "UserId", "UserName");
+            model.AssigningPersons = new SelectList(_wrapper.GetAllUsers(), "UserId", "UserName");
+            model.Categories = new SelectList(_wrapper.GetAllCategories(), "Id", "Name");
+            model.Statuses = new SelectList(_wrapper.GetAllStatuses(), "Id", "Name");
+            model.Priorities = new SelectList(_wrapper.GetAllPriorities(), "Id", "Name");
+            model.Types = new SelectList(_wrapper.GetAllTypes(), "Id", "Name");
+            return View(model);
         }
-
-        //
-        // POST: /Tasks/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Web.Models.TaskModel model)
         {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            _wrapper.UpdateTask(
+                Mapper.Map<Model.TaskModel>(Mapper.Map<Model.TaskModel>(model))
+            );
+            return RedirectToAction("Index");
         }
-
-        //
-        // GET: /Tasks/Delete/5
 
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(
+               Mapper.Map<Web.Models.TaskModel>(_wrapper.GetTaskById(id))
+           );
         }
 
-        //
-        // POST: /Tasks/Delete/5
-
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(Web.Models.TaskModel task)
         {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            _wrapper.DeleteTask(task.Id);
+            return RedirectToAction("Index");
         }
     }
 }

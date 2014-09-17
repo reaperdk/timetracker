@@ -51,8 +51,48 @@ namespace TimeTracker.Web
                 .ForMember(dest => dest.TypeId, opts => opts.MapFrom(src => src.Type.Id))
                 .ForMember(dest => dest.TypeName, opts => opts.MapFrom(src => src.Type.Name));
 
-            Mapper.CreateMap<Web.Models.TaskModel, Model.TaskModel>();
+            Mapper.CreateMap<Web.Models.TaskModel, Model.TaskModel>()
+                .ForMember(dest => dest.ProjectId, opts => opts.MapFrom(src => src.ProjectId))
+                .ForMember(
+                        dest => dest.Project,
+                        opts => opts.MapFrom(src => new Model.ProjectModel { Id = src.ProjectId })
+                    )
 
+                .ForMember(dest => dest.AssignedPersonId, opts => opts.MapFrom(src => src.AssignedPersonId))
+                .ForMember(
+                        dest => dest.AssignedPerson,
+                        opts => opts.MapFrom(src => new Model.UserModel { UserId = src.AssignedPersonId })
+                    )
+
+                .ForMember(dest => dest.AssigningPersonId, opts => opts.MapFrom(src => src.AssigningPersonId))
+                .ForMember(
+                        dest => dest.AssigningPerson,
+                        opts => opts.MapFrom(src => new Model.UserModel { UserId = src.AssigningPersonId })
+                    )
+
+                .ForMember(dest => dest.CategoryId, opts => opts.MapFrom(src => src.CategoryId))
+                .ForMember(
+                        dest => dest.Category,
+                        opts => opts.MapFrom(src => new Model.CategoryModel { Id = src.CategoryId })
+                    )
+
+                .ForMember(dest => dest.StatusId, opts => opts.MapFrom(src => src.StatusId))
+                .ForMember(
+                        dest => dest.Status,
+                        opts => opts.MapFrom(src => new Model.StatusModel { Id = src.StatusId })
+                    )
+
+                .ForMember(dest => dest.PriorityId, opts => opts.MapFrom(src => src.PriorityId))
+                .ForMember(
+                        dest => dest.Priority,
+                        opts => opts.MapFrom(src => new Model.PriorityModel { Id = src.PriorityId })
+                    )
+
+                .ForMember(dest => dest.TypeId, opts => opts.MapFrom(src => src.TypeId))
+                .ForMember(
+                        dest => dest.Type,
+                        opts => opts.MapFrom(src => new Model.TypeModel { Id = src.TypeId })
+                    );
 
         }
     }

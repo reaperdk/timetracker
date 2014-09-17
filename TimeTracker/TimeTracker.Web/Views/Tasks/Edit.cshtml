@@ -1,0 +1,145 @@
+﻿@using TimeTracker.Web.Models;
+
+@model TaskModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>TaskModel</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TimeEstimate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TimeEstimate)
+            @Html.ValidationMessageFor(model => model.TimeEstimate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StartDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StartDate)
+            @Html.ValidationMessageFor(model => model.StartDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FinishDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FinishDate)
+            @Html.ValidationMessageFor(model => model.FinishDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Filepath)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Filepath)
+            @Html.ValidationMessageFor(model => model.Filepath)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Version)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Version)
+            @Html.ValidationMessageFor(model => model.Version)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProjectId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.ProjectId, Model.Projects)
+            @Html.ValidationMessageFor(model => model.ProjectId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AssignedPersonId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.AssignedPersonId, Model.AssignedPersons)
+            @Html.ValidationMessageFor(model => model.AssignedPersonId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AssigningPersonId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.AssigningPersonId, Model.AssigningPersons)
+            @Html.ValidationMessageFor(model => model.AssigningPersonId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CategoryId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.CategoryId, Model.Categories)
+            @Html.ValidationMessageFor(model => model.CategoryId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StatusId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.StatusId, Model.Statuses)
+            @Html.ValidationMessageFor(model => model.StatusId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PriorityId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.PriorityId, Model.Priorities)
+            @Html.ValidationMessageFor(model => model.PriorityId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TypeId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.TypeId, Model.Types)
+            @Html.ValidationMessageFor(model => model.TypeId)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
