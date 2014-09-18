@@ -10,7 +10,6 @@ namespace TimeTracker.Web.Controllers
     [Authorize]
     public class ProjectsController : BaseController
     {
-
         public ActionResult Index()
         {
             return View(
@@ -26,6 +25,7 @@ namespace TimeTracker.Web.Controllers
                 Mapper.Map<Web.Models.ProjectModel>(_wrapper.GetProjectById(id))
             );
         }
+
         [Authorize(Roles = "admin")]
         public ActionResult Create()
         {

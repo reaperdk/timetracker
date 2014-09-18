@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 using log4net;
-using pt12lolMvc4Application.Web.Filters;
+using TimeTracker.Web.Filters;
 
 namespace TimeTracker.Web
 {

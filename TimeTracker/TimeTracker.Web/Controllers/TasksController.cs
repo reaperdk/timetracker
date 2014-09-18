@@ -10,7 +10,6 @@ namespace TimeTracker.Web.Controllers
     [Authorize]
     public class TasksController : BaseController
     {
-
         public ActionResult Index()
         {
             return View(
