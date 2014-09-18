@@ -351,6 +351,10 @@
       <Project>{a139d99e-95f4-4813-9902-0e9066af52d6}</Project>
       <Name>TimeTracker.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TimeTracker.WcfContract\TimeTracker.WcfContract.csproj">
+      <Project>{caede7d1-4f13-4eed-9f6a-4161c5d383e6}</Project>
+      <Name>TimeTracker.WcfContract</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TimeTracker.Wrapper\TimeTracker.Wrapper.csproj">
       <Project>{413fe920-cdb0-4b3c-bd23-dfd1902dc5c6}</Project>
       <Name>TimeTracker.Wrapper</Name>
