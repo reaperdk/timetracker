@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using log4net;
 
-namespace TimeTracker.Web.Filters
+namespace TimeTracker.WebApi.Filters
 {
     class LoggingExceptionFilter : IExceptionFilter
     {

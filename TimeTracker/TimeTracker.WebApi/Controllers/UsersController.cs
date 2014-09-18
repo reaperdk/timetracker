@@ -37,6 +37,7 @@ namespace TimeTracker.WebApi.Controllers
         [HttpGet]
         public IHttpActionResult GetByUserName(string userName)
         {
+            var x = _service.GetByUserName(userName);
             return JsonNonCyclic(_service.GetByUserName(userName));
         }
 
