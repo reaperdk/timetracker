@@ -68,16 +68,17 @@ namespace TimeTracker.Wrapper
 
         public bool UpdateCreatedUser(UserModel user, string salt)
         {
-            user.UserId = RequestGet<UserModel>("Users/GetByUserName?userName=" + user.UserName).UserId;
-            RequestPut("Users/UpdateCreated/", user);
-            RequestPut("Memberships/SetSalt/" + user.UserId, salt);
+            user.UserId = RequestGet<UserModel>("Users/ByUserName/" + user.UserName).UserId;
+            RequestPut("Users/Created/", user);
+            RequestPut("Memberships/Salt/" + user.UserId, salt);
             // o tak, zrob to Andrzej!
             return true;
         }
 
         public bool UpdateUser(UserModel user)
         {
-            throw new NotImplementedException();
+            RequestPut("Users/", user);
+            return true;
         }
 
         public IEnumerable<ProjectModel> GetAllProjects()

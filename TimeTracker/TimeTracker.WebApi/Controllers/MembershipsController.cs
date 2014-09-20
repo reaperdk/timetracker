@@ -22,6 +22,7 @@ namespace TimeTracker.WebApi.Controllers
         }
 
         [HttpPut]
+        [Route("api/{controller}/Salt/{id}")]
         public HttpResponseMessage SetSalt(int id, [FromBody]string value)
         {
             try

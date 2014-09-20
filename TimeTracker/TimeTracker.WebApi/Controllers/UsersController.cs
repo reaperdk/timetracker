@@ -35,9 +35,9 @@ namespace TimeTracker.WebApi.Controllers
         }
 
         [HttpGet]
+        [Route("api/{controller}/ByUserName/{userName}")]
         public IHttpActionResult GetByUserName(string userName)
         {
-            var x = _service.GetByUserName(userName);
             return JsonNonCyclic(_service.GetByUserName(userName));
         }
 
@@ -63,6 +63,7 @@ namespace TimeTracker.WebApi.Controllers
         }
 
         [HttpPut]
+        [Route("api/{controller}/Created")]
         public HttpResponseMessage UpdateCreated([FromBody]UserModel value)
         {
             try
