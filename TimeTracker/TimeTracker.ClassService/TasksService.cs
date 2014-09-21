@@ -61,6 +61,19 @@ namespace TimeTracker.ClassService
             {
                 TaskModel toUpdate = _repository.Get(item => item.Id == task.Id).First();
                 toUpdate.Name = task.Name;
+                toUpdate.Description = task.Description;
+                toUpdate.TimeEstimate = task.TimeEstimate;
+                toUpdate.StartDate = task.StartDate;
+                toUpdate.FinishDate = task.FinishDate;
+                toUpdate.Filepath = task.Filepath;
+                toUpdate.Version = task.Version;
+                toUpdate.ProjectId = task.ProjectId;
+                toUpdate.AssignedPersonId = task.AssignedPersonId;
+                toUpdate.AssigningPersonId = task.AssigningPersonId;
+                toUpdate.CategoryId = task.CategoryId;
+                toUpdate.StatusId = task.StatusId;
+                toUpdate.PriorityId = task.PriorityId;
+                toUpdate.TypeId = task.TypeId;
                 _repository.Update(toUpdate);
                 _repository.Save();
             }
