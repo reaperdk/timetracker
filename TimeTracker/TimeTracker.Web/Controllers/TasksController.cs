@@ -21,8 +21,16 @@ namespace TimeTracker.Web.Controllers
 
         public ActionResult Details(int id)
         {
+            Model.TaskModel task = _wrapper.GetTaskById(id);
+            task.Project = _wrapper.GetProjectById(task.ProjectId);
+            task.AssignedPerson = _wrapper.GetUserById(task.AssignedPersonId);
+            task.AssigningPerson = _wrapper.GetUserById(task.AssigningPersonId);
+            task.Category = _wrapper.GetCategoryById(task.CategoryId);
+            task.Priority = _wrapper.GetPriorityById(task.PriorityId);
+            task.Status = _wrapper.GetStatusById(task.StatusId);
+            task.Type = _wrapper.GetTypeById(task.TypeId);
             return View(
-                Mapper.Map<Web.Models.TaskModel>(_wrapper.GetTaskById(id))
+                Mapper.Map<Web.Models.TaskModel>(task)
             );
         }
 
