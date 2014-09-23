@@ -12,6 +12,7 @@ namespace TimeTracker.Wrapper.WcfWrapperConnection
     {
         private ChannelFactory<IWcfContract> _remoteFactory;
         private IWcfContract _remoteProxy;
+        private bool _disposed;
 
         public ChannelFactory<IWcfContract> RemoteFactory
         {
@@ -25,7 +26,7 @@ namespace TimeTracker.Wrapper.WcfWrapperConnection
             set { _remoteProxy = value; }
         }
 
-        public void SetConnection()
+        public WcfConnectionService()
         {
             if (_remoteFactory != null)
             {
@@ -34,9 +35,10 @@ namespace TimeTracker.Wrapper.WcfWrapperConnection
 
             _remoteFactory = new ChannelFactory<IWcfContract>("TimeTrackerWcfConfiguration");
             _remoteProxy = _remoteFactory.CreateChannel();
+            _disposed = false;
         }
 
-        public void CloseConnection()
+        public void Dispose()
         {
             try
             {

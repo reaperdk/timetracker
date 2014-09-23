@@ -8,7 +8,7 @@ using System.ServiceModel;
 
 namespace TimeTracker.Wrapper.WcfWrapperConnection
 {
-    public interface IWcfConnectionService
+    public interface IWcfConnectionService : IDisposable
     {
         /// <summary>
         /// Class that can create channel
@@ -19,17 +19,5 @@ namespace TimeTracker.Wrapper.WcfWrapperConnection
         /// Class that can use Contract's method.
         /// </summary>
         IWcfContract RemoteProxy { get; set; }
-
-        /// <summary>
-        /// Functions set up connection with server
-        /// </summary>
-        /// <exception cref="Exception">Connection currently exist</exception>
-        void SetConnection();
-
-        /// <summary>
-        /// Function close connection with server.
-        /// Exceptions from System.ServiceModel.Channel ChannelFactory
-        /// </summary>
-        void CloseConnection();
     }
 }
