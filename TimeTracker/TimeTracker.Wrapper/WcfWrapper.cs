@@ -201,27 +201,42 @@ namespace TimeTracker.Wrapper
 
         public IEnumerable<Model.SlotModel> GetAllSlots()
         {
-            return _connectionService.RemoteProxy.GetAllSlots();
+            using (_connectionService = _getWcfConnectionService())
+            {
+                return _connectionService.RemoteProxy.GetAllSlots();
+            }
         }
 
         public Model.SlotModel GetSlotById(int id)
         {
-            return _connectionService.RemoteProxy.GetSlotById(id);
+            using (_connectionService = _getWcfConnectionService())
+            {
+                return _connectionService.RemoteProxy.GetSlotById(id);
+            }
         }
 
         public bool CreateSlot(Model.SlotModel slot)
         {
-            return _connectionService.RemoteProxy.CreateSlot(slot);
+            using (_connectionService = _getWcfConnectionService())
+            {
+                return _connectionService.RemoteProxy.CreateSlot(slot);
+            }
         }
 
         public bool UpdateSlot(Model.SlotModel slot)
         {
-            return _connectionService.RemoteProxy.UpdateSlot(slot);
+            using (_connectionService = _getWcfConnectionService())
+            {
+                return _connectionService.RemoteProxy.UpdateSlot(slot);
+            }
         }
 
         public bool DeleteSlot(int id)
         {
-            return _connectionService.RemoteProxy.DeleteSlot(id);
+            using (_connectionService = _getWcfConnectionService())
+            {
+                return _connectionService.RemoteProxy.DeleteSlot(id);
+            }
         }
 
         public IEnumerable<Model.RoleModel> GetAllRoles()
