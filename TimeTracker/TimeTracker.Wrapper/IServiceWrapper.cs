@@ -35,6 +35,12 @@ namespace TimeTracker.Wrapper
         bool UpdateTask(TaskModel task);
         bool DeleteTask(int id);
 
+        IEnumerable<SlotModel> GetAllSlots();
+        SlotModel GetSlotById(int id);
+        bool CreateSlot(SlotModel slot);
+        bool UpdateSlot(SlotModel slot);
+        bool DeleteSlot(int id);
+
         IEnumerable<RoleModel> GetAllRoles();
         RoleModel GetRoleById(int id);
         IEnumerable<CategoryModel> GetAllCategories();
@@ -45,5 +51,6 @@ namespace TimeTracker.Wrapper
         PriorityModel GetPriorityById(int id);
         IEnumerable<TypeModel> GetAllTypes();
         TypeModel GetTypeById(int id);
+        
     }
 }

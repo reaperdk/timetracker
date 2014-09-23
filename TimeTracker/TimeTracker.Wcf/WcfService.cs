@@ -26,6 +26,7 @@ namespace TimeTracker.Wcf
         private readonly IStatusesService _statusesService;
         private readonly IPrioritiesService _prioritiesService;
         private readonly ITypesService _typesService;
+        private readonly ISlotsService _slotsService;
 
         public WcfService()
         {
@@ -40,6 +41,7 @@ namespace TimeTracker.Wcf
             _statusesService = new StatusesService();
             _prioritiesService = new PrioritiesService();
             _typesService = new TypesService();
+            _slotsService = new SlotsService();
         }
 
         public WcfService(
@@ -50,7 +52,8 @@ namespace TimeTracker.Wcf
             ICategoriesService categoriesService, 
             IStatusesService statusesService, 
             IPrioritiesService prioritiesService, 
-            ITypesService typesService)
+            ITypesService typesService,
+            ISlotsService slotsService)
         {
             _usersService = usersService;
             _projectsService = projectsService;
@@ -60,6 +63,7 @@ namespace TimeTracker.Wcf
             _statusesService = statusesService;
             _prioritiesService = prioritiesService;
             _typesService = typesService;
+            _slotsService = slotsService;
         }
 
         public void InitializeDatabase()
@@ -186,6 +190,37 @@ namespace TimeTracker.Wcf
         public bool DeleteTask(int id)
         {
             _tasksService.Delete(id);
+            //TODO: return  result
+            return true;
+        }
+
+        public IEnumerable<SlotModel> GetAllSlots()
+        {
+            return _slotsService.GetAll();
+        }
+
+        public SlotModel GetSlotById(int id)
+        {
+            return _slotsService.GetById(id);
+        }
+
+        public bool CreateSlot(SlotModel slot)
+        {
+            _slotsService.Create(slot);
+            //TODO: return  result
+            return true;
+        }
+
+        public bool UpdateSlot(SlotModel slot)
+        {
+            _slotsService.Update(slot);
+            //TODO: return  result
+            return true;
+        }
+
+        public bool DeleteSlot(int id)
+        {
+            _slotsService.Delete(id);
             //TODO: return  result
             return true;
         }

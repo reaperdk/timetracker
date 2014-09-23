@@ -131,6 +131,31 @@ namespace TimeTracker.Wrapper
             throw new NotImplementedException();
         }
 
+        public IEnumerable<SlotModel> GetAllSlots()
+        {
+            throw new NotImplementedException();
+        }
+
+        public SlotModel GetSlotById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool CreateSlot(SlotModel slot)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateSlot(SlotModel slot)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool DeleteSlot(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<RoleModel> GetAllRoles()
         {
             return RequestGet<RoleModel[]>("Roles/");

@@ -46,6 +46,7 @@
     <Compile Include="IPrioritiesService.cs" />
     <Compile Include="IProjectsService.cs" />
     <Compile Include="IRolesService.cs" />
+    <Compile Include="ISlotsService.cs" />
     <Compile Include="IStatusesService.cs" />
     <Compile Include="ITasksService.cs" />
     <Compile Include="ITypesService.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="ProjectsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RolesService.cs" />
+    <Compile Include="SlotsService.cs" />
     <Compile Include="StatusesService.cs" />
     <Compile Include="TasksService.cs" />
     <Compile Include="TypesService.cs" />

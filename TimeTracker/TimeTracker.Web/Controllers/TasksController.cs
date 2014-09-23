@@ -29,6 +29,7 @@ namespace TimeTracker.Web.Controllers
             task.Priority = _wrapper.GetPriorityById(task.PriorityId);
             task.Status = _wrapper.GetStatusById(task.StatusId);
             task.Type = _wrapper.GetTypeById(task.TypeId);
+            task.Slots = _wrapper.GetAllSlots();
             return View(
                 Mapper.Map<Web.Models.TaskModel>(task)
             );

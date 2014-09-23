@@ -30,6 +30,10 @@ namespace TimeTracker.Web
             Mapper.CreateMap<Web.Models.ProjectModel, Model.ProjectModel>()
                 .ForMember(dest => dest.Name, opts => opts.MapFrom(src => src.Name))
                 .ForMember(dest => dest.Id, opts => opts.MapFrom(src => src.Id));
+                //.ForMember(
+                //    dest => dest.Users,
+                //    opts => opts.MapFrom(src => new[] { new Model.UserModel { UserId = src.UserId } })
+                //); 
 
             Mapper.CreateMap<Model.TaskModel, Web.Models.TaskModel>()
                 .ForMember(dest => dest.ProjectId, opts => opts.MapFrom(src => src.ProjectId))
@@ -95,6 +99,9 @@ namespace TimeTracker.Web
                         dest => dest.Type,
                         opts => opts.MapFrom(src => new Model.TypeModel { Id = src.TypeId })
                     );
+
+            Mapper.CreateMap<Model.SlotModel, Web.Models.SlotModel>();
+            Mapper.CreateMap<Web.Models.SlotModel, Model.SlotModel>();
 
         }
     }

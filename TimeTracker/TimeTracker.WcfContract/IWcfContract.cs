@@ -70,6 +70,17 @@ namespace TimeTracker.WcfContract
         bool DeleteTask(int id);
 
         [OperationContract]
+        IEnumerable<SlotModel> GetAllSlots();
+        [OperationContract]
+        SlotModel GetSlotById(int id);
+        [OperationContract]
+        bool CreateSlot(SlotModel slot);
+        [OperationContract]
+        bool UpdateSlot(SlotModel slot);
+        [OperationContract]
+        bool DeleteSlot(int id);
+
+        [OperationContract]
         IEnumerable<RoleModel> GetAllRoles();
         [OperationContract]
         RoleModel GetRoleById(int id);
