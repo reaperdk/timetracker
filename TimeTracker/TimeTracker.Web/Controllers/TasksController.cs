@@ -10,13 +10,22 @@ namespace TimeTracker.Web.Controllers
     [Authorize]
     public class TasksController : BaseController
     {
-        public ActionResult Index()
+        public ActionResult Index(int? projectId)
         {
+            if (projectId == null)
+            {
+                return View(
+                    _wrapper.GetAllTasks().Select(
+                        item => Mapper.Map<Web.Models.TaskModel>(item)
+                    )
+                );
+            }
             return View(
-                _wrapper.GetAllTasks().Select(
+               _wrapper.GetAllTasks().Select(
                     item => Mapper.Map<Web.Models.TaskModel>(item)
-                )
+               ).Where(item => item.ProjectId.Equals(projectId))
             );
+ 
         }
 
         public ActionResult Details(int id)
@@ -55,7 +64,7 @@ namespace TimeTracker.Web.Controllers
         public ActionResult Create(Web.Models.TaskModel model)
         {
             _wrapper.CreateTask(Mapper.Map<Model.TaskModel>(model));
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { projectId = model.ProjectId });
         }
 
         public ActionResult Edit(int id)
@@ -77,7 +86,7 @@ namespace TimeTracker.Web.Controllers
             _wrapper.UpdateTask(
                 Mapper.Map<Model.TaskModel>(Mapper.Map<Model.TaskModel>(model))
             );
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { projectId = model.ProjectId });
         }
 
         public ActionResult Delete(int id)
@@ -88,10 +97,10 @@ namespace TimeTracker.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(Web.Models.TaskModel task)
+        public ActionResult Delete(Web.Models.TaskModel model)
         {
-            _wrapper.DeleteTask(task.Id);
-            return RedirectToAction("Index");
+            _wrapper.DeleteTask(model.Id);
+            return RedirectToAction("Index", new { projectId = model.ProjectId });
         }
     }
 }

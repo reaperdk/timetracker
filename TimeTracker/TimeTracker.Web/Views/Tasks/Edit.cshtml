@@ -137,7 +137,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", new{ projectId = Model.ProjectId}, null)
 </div>
 
 @section Scripts {

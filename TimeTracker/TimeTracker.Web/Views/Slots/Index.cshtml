@@ -9,10 +9,12 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 
+    <p>
+        @Html.ActionLink("Create New", "Create", new { taskId = Model.First().TaskId }, null)
+    </p>
+
+    
 @if (Model.Any()) {
 
     <table>
@@ -23,9 +25,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.FinishDate)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.TaskId)
-            </th>
+            </th>*@
             <th></th>
         </tr>
 
@@ -37,9 +39,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.FinishDate)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.TaskId)
-            </td>
+            </td>*@
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
                 @Html.ActionLink("Delete", "Delete", new { id=item.Id })

@@ -25,17 +25,17 @@
         @Html.DisplayFor(model => model.FinishDate)
     </div>
 
-    <div class="display-label">
+    @*<div class="display-label">
          @Html.DisplayNameFor(model => model.TaskId)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.TaskId)
-    </div>
+    </div>*@
 </fieldset>
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     <p>
         <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Back to List", "Index", new { taskId = Model.TaskId }, null)
     </p>
 }

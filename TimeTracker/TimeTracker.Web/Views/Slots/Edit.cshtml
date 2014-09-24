@@ -32,13 +32,13 @@
             @Html.ValidationMessageFor(model => model.FinishDate)
         </div>
 
-        <div class="editor-label">
+        @*<div class="editor-label">
             @Html.LabelFor(model => model.TaskId)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.TaskId)
             @Html.ValidationMessageFor(model => model.TaskId)
-        </div>
+        </div>*@
 
         <p>
             <input type="submit" value="Save" />
@@ -47,7 +47,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", new { taskId = Model.TaskId }, null)
 </div>
 
 @section Scripts {
